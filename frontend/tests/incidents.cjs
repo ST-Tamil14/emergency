@@ -1,0 +1,66 @@
+const {chromium}=require('playwright');
+const {spawn}=require('child_process');
+const fs=require('fs'),path=require('path'),assert=require('assert/strict');
+const root=path.resolve(__dirname,'../..'),base='http://127.0.0.1:8017';
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+const report={checks:[],pageErrors:[]};
+(async()=>{
+ fs.mkdirSync(path.join(root,'.qa'),{recursive:true});
+ const log=fs.openSync(path.join(root,'.qa','incident-browser.log'),'w');
+ const python=path.join(root,'.venv',process.platform==='win32'?'Scripts/python.exe':'bin/python');
+ const server=spawn(python,['-m','uvicorn','app:app','--host','127.0.0.1','--port','8017'],{cwd:path.join(root,'research-service'),windowsHide:true,env:{...process.env,SIMULATION_MODE:'sumo',AGENT_MODE:'inprocess',DATABASE_URL:'sqlite:///'+path.join(root,'.qa','incident-browser.db')},stdio:['ignore',log,log]});
+ let browser;
+ const post=async(p,body={})=>{const r=await fetch(base+'/api'+p,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(body)});assert.equal(r.status,200,await r.clone().text());return r.json()};
+ try{
+  for(let i=0;i<120;i++){try{if((await fetch(base+'/api/health')).ok)break}catch{}await wait(250)}
+  await post('/reset',{mode:'sumo',density:0});
+  browser=await chromium.launch({channel:process.env.BROWSER_CHANNEL||'msedge',headless:true,args:['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+  const page=await browser.newPage({viewport:{width:1512,height:1080}});
+  page.on('pageerror',e=>report.pageErrors.push(String(e)));
+  await page.goto(base);await page.getByText('Service connected',{exact:true}).waitFor();
+  await page.getByRole('button',{name:'Incident control',exact:true}).click();
+  await page.getByRole('dialog').getByRole('button',{name:'Inject incident',exact:true}).click();
+  await page.getByRole('button',{name:'Start simulation',exact:true}).click();
+  await page.getByText('Generation E2 released',{exact:true}).waitFor({timeout:30000});
+  await page.getByRole('button',{name:'Pause',exact:true}).click();
+  report.checks.push('SUMO road blockage and first verified recovery');
+  await page.getByRole('button',{name:'Incident control',exact:true}).click();
+  const dialog=page.getByRole('dialog');
+  await dialog.getByLabel('Incident type',{exact:true}).selectOption('partition');
+  await dialog.getByLabel('Controller',{exact:true}).selectOption('J5');
+  await dialog.getByLabel('Resolution',{exact:true}).selectOption('manual');
+  await dialog.getByRole('button',{name:'Inject incident',exact:true}).click();
+  for(let i=0;i<30;i++)await post('/control/step');
+  await page.getByText('Generation E3 released',{exact:true}).waitFor();
+  await page.getByRole('button',{name:'Replay stale command'}).click();
+  await page.getByText(/old command rejected/).waitFor();
+  report.checks.push('Second disruption, generation E3, stale command rejection');
+  await page.getByRole('button',{name:'Incident control',exact:true}).click();
+  await dialog.getByLabel('Trigger',{exact:true}).selectOption('approach');
+  await dialog.getByLabel('Approach junction',{exact:true}).selectOption('J8');
+  await dialog.getByRole('button',{name:'Schedule incident',exact:true}).click();
+  await page.getByRole('button',{name:'Cancel',exact:true}).click();
+  await page.getByText(/CANCELLED/).waitFor();
+  report.checks.push('Approach scheduling and cancellation');
+  await page.getByRole('button',{name:'Resolve',exact:true}).first().click();
+  await page.getByText(/RESOLVED/).first().waitFor();
+  report.checks.push('Individual incident resolution');
+  await page.getByRole('button',{name:'Scenarios',exact:true}).click();
+  await page.getByRole('button',{name:'Use current incident schedule'}).click();
+  await page.getByLabel('Scenario name',{exact:true}).fill('Repeated incident browser check');
+  await page.getByRole('button',{name:'Save preset',exact:true}).click();
+  await page.getByText('Scenario saved',{exact:true}).waitFor();
+  report.checks.push('Incident schedule saved in scenario preset');
+  await page.getByRole('button',{name:'Live corridor',exact:true}).click();
+  await page.screenshot({path:path.join(root,'.qa','advanced-dashboard.png'),fullPage:true});
+  await page.setViewportSize({width:390,height:844});await wait(800);
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+  await page.getByRole('button',{name:'Incident control',exact:true}).click();
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+  await page.screenshot({path:path.join(root,'.qa','advanced-mobile.png'),fullPage:true});
+  assert.deepEqual(report.pageErrors,[]);
+  report.checks.push('Desktop and mobile render without errors or horizontal overflow');
+  report.passed=true;
+ }catch(e){report.passed=false;report.failure=String(e);throw e}
+ finally{if(browser)await browser.close();server.kill();fs.closeSync(log);fs.writeFileSync(path.join(root,'.qa','incident-browser-report.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2))}
+})().catch(e=>{console.error(e);process.exitCode=1});

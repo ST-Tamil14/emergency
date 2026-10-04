@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "SUMO road blockage and first verified recovery",
+    "Second disruption, generation E3, stale command rejection",
+    "Approach scheduling and cancellation",
+    "Individual incident resolution",
+    "Incident schedule saved in scenario preset",
+    "Desktop and mobile render without errors or horizontal overflow"
+  ],
+  "pageErrors": [],
+  "passed": true
+}

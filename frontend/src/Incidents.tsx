@@ -1,0 +1,38 @@
+import {useState} from 'react';
+import {X, Plus, TriangleAlert} from 'lucide-react';
+
+export function IncidentDialog({state,busy,error,onClose,onSubmit}:{state:any;busy:boolean;error:string;onClose:()=>void;onSubmit:(body:any)=>Promise<any>}){
+ const [kind,setKind]=useState('accident'),[edge,setEdge]=useState('J3_J6'),[controller,setController]=useState('J3');
+ const [trigger,setTrigger]=useState('now'),[at,setAt]=useState(Math.ceil(state.time+10)),[junction,setJunction]=useState('J3'),[distance,setDistance]=useState(30);
+ const [duration,setDuration]=useState(30),[manual,setManual]=useState(false),[position,setPosition]=useState(50),[intensity,setIntensity]=useState(70);
+ const road=['accident','closure','congestion'].includes(kind);
+ const roads=(state.pairs||[]).flatMap(([a,b]:string[])=>[[a,b],[b,a]]);
+ return <div className="modal-backdrop" onClick={onClose}><section className="modal wide" role="dialog" aria-modal="true" aria-label="Add incident" onClick={e=>e.stopPropagation()}>
+  <div className="panel-title"><h3>Incident control</h3><button className="icon-button" aria-label="Close" onClick={onClose}><X size={18}/></button></div>
+  <p>Inject while moving, schedule a time, or trigger on approach. An entered lane blockage holds the ambulance until cleared.</p>
+  {error&&<div className="alert error" role="alert">{error}</div>}
+  <form onSubmit={async e=>{e.preventDefault();const result=await onSubmit({kind,edge:road?edge.split('_'):null,controller:road?null:controller,lane:0,position:position/100,intensity:intensity/100,duration:manual&&kind!=='pedestrian'?null:duration,trigger,at:trigger==='time'?at:null,junction:trigger==='approach'?junction:null,distance});if(result)onClose()}}>
+   <div className="form-row"><label>Incident type<select aria-label="Incident type" value={kind} onChange={e=>setKind(e.target.value)}><option value="accident">Accident / blocked lane</option><option value="closure">Directional road closure</option><option value="congestion">Congestion</option><option value="readback">Loss of phase readback</option><option value="write">Write authority denied</option><option value="partition">Signal communication lost</option><option value="configuration">Configuration drift</option><option value="pedestrian">Pedestrian clearance</option></select></label>
+   {road?<label>Road direction<select aria-label="Road direction" value={edge} onChange={e=>setEdge(e.target.value)}>{roads.map(([a,b]:string[])=><option key={a+b} value={`${a}_${b}`}>{a} → {b}</option>)}</select></label>:<label>Controller<select aria-label="Controller" value={controller} onChange={e=>setController(e.target.value)}>{state.controllers.map((c:any)=><option key={c.id}>{c.id}</option>)}</select></label>}</div>
+   {road&&<p className="form-note">One lane per direction: lane 0. Incidents affect the selected direction only.</p>}
+   {kind==='accident'&&<label>Position along road (%)<input required type="number" min="0" max="100" value={position} onChange={e=>setPosition(+e.target.value)}/></label>}
+   {kind==='congestion'&&<label>Speed reduction (%)<input required type="number" min="10" max="95" value={intensity} onChange={e=>setIntensity(+e.target.value)}/></label>}
+   <div className="form-row"><label>Trigger<select aria-label="Trigger" value={trigger} onChange={e=>setTrigger(e.target.value)}><option value="now">Now</option><option value="time">At simulation time</option><option value="approach">When approaching junction</option></select></label>
+   {trigger==='time'&&<label>Simulation time (seconds)<input required type="number" min={Math.ceil(state.time)} max="600" value={at} onChange={e=>setAt(+e.target.value)}/></label>}
+   {trigger==='approach'&&<><label>Approach junction<select aria-label="Approach junction" value={junction} onChange={e=>setJunction(e.target.value)}>{state.controllers.map((c:any)=><option key={c.id}>{c.id}</option>)}</select></label><label>Distance before junction (m)<input required type="number" min="1" max="300" value={distance} onChange={e=>setDistance(+e.target.value)}/></label></>}</div>
+   <div className="form-row"><label>Resolution<select aria-label="Resolution" value={manual&&kind!=='pedestrian'?'manual':'duration'} onChange={e=>setManual(e.target.value==='manual')}><option value="duration">After a duration</option>{kind!=='pedestrian'&&<option value="manual">Resolve manually</option>}</select></label>{(!manual||kind==='pedestrian')&&<label>Duration after activation (s)<input required type="number" min="1" max="600" value={duration} onChange={e=>setDuration(+e.target.value)}/></label>}</div>
+   <button className="button danger full" disabled={busy} type="submit"><Plus size={16}/>{trigger==='now'?'Inject incident':'Schedule incident'}</button>
+  </form>
+ </section></div>
+}
+
+export function IncidentPanel({state,disabled,action,onAdd}:{state:any;disabled:boolean;action:(path:string,body?:any)=>Promise<any>;onAdd:()=>void}){
+ const incidents=state?.incidents||[],history=state?.recovery_history||[];
+ return <section className="panel incident-panel"><div className="panel-title"><span>Incidents & route decisions</span><button className="button small secondary" disabled={disabled} onClick={onAdd}><Plus size={14}/> Add incident</button></div>
+  <div className="incident-summary"><div><small>ESTIMATED REMAINING TIME</small><strong>{state?.eta==null?'Unavailable':`${state.eta.toFixed(1)} s`}</strong></div><div><small>AFTER LAST DECISION</small><strong>{state?.decision?.eta_change==null?'—':`${state.decision.eta_change>0?'+':''}${state.decision.eta_change} s`}</strong></div><div><small>ACTIVE / SCHEDULED</small><strong>{incidents.filter((i:any)=>i.status==='ACTIVE').length} / {incidents.filter((i:any)=>i.status==='SCHEDULED').length}</strong></div></div>
+  <div className={'decision '+(state?.status==='FALLBACK'?'blocked':'')}><TriangleAlert size={18}/><div>{state?.decision?.reason||'Waiting for route data.'}{state?.status==='FALLBACK'&&<p>{state.decision?.next_action}</p>}<small>ETA is an estimate from road speeds, queues and modeled clearance. Route changes require at least 3 seconds of objective improvement when the current route remains feasible.</small></div></div>
+  {!!state?.alternatives?.length&&<div className="route-options">{state.alternatives.map((o:any,i:number)=><article key={i} className={i===0?'chosen':''}><b>{o.labels.join(' · ')||'Feasible alternative'}</b><p>{o.route.join(' → ')}</p><span>{o.eta.toFixed(1)} s estimated · {o.distance} m remaining</span><small>{o.reconfigured} controllers in recovery scope</small></article>)}</div>}
+  <div className="incident-list">{!incidents.length?<p className="empty-inline">No incidents. Add an accident downstream of J3, then inject another signal failure during recovery.</p>:[...incidents].reverse().map((i:any)=><div className="incident-row" key={i.id}><div><b>{i.kind} · {i.controller||i.edge.join(' → ')}</b><p>{i.status} · {i.activated_at!=null?`activated ${i.activated_at.toFixed(1)}s`:i.trigger==='time'?`at ${i.at}s`:i.trigger==='approach'?`${i.distance}m before ${i.junction}`:'now'} · {i.duration?`${i.duration}s duration`:'manual resolution'}</p><code>{i.id}</code></div>{['ACTIVE','SCHEDULED'].includes(i.status)&&<button className="button small secondary" disabled={disabled} onClick={()=>action(`/incidents/${i.id}/resolve`)}>{i.status==='ACTIVE'?'Resolve':'Cancel'}</button>}</div>)}</div>
+  {!!history.length&&<div className="generation-history"><b>Recovery history</b>{history.map((h:any)=><span key={h.generation}>E{h.generation} · {h.stage.toLowerCase()} · {h.started.toFixed(1)}s</span>)}</div>}
+ </section>
+}

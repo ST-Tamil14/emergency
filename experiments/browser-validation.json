@@ -1,0 +1,16 @@
+{
+  "pageErrors": [],
+  "mobileOverflow": false,
+  "checks": [
+    "Spring Boot gateway",
+    "Packaged UI and SUMO websocket",
+    "Fault injection and state-coupled recovery",
+    "Stale-command rejection",
+    "Certificate inspector",
+    "Scenario persistence",
+    "SUMO batch experiment",
+    "Run persistence and recorded playback",
+    "Responsive layout"
+  ],
+  "passed": true
+}

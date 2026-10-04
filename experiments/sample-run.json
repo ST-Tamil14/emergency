@@ -1,0 +1,5381 @@
+{
+  "schema_version": 1,
+  "algorithm_version": "0.1.0",
+  "verification_public_key": "44351b1d2beb3ca01ce9b310f14c2c98228ce1f0f93926e5fc065d8c106682e3",
+  "snapshot": {
+    "id": "67d8dfed2800",
+    "time": 9.6,
+    "status": "ACTIVE",
+    "running": false,
+    "mode": "SUMO microsimulation",
+    "seed": 42,
+    "density": 12,
+    "strategy": "partial",
+    "nodes": {
+      "W": [
+        -80,
+        0
+      ],
+      "J1": [
+        0,
+        0
+      ],
+      "J2": [
+        80,
+        0
+      ],
+      "J3": [
+        160,
+        0
+      ],
+      "J4": [
+        0,
+        80
+      ],
+      "J5": [
+        80,
+        80
+      ],
+      "J6": [
+        160,
+        80
+      ],
+      "E": [
+        240,
+        80
+      ]
+    },
+    "pairs": [
+      [
+        "W",
+        "J1"
+      ],
+      [
+        "J1",
+        "J2"
+      ],
+      [
+        "J2",
+        "J3"
+      ],
+      [
+        "J1",
+        "J4"
+      ],
+      [
+        "J2",
+        "J5"
+      ],
+      [
+        "J3",
+        "J6"
+      ],
+      [
+        "J4",
+        "J5"
+      ],
+      [
+        "J5",
+        "J6"
+      ],
+      [
+        "J6",
+        "E"
+      ]
+    ],
+    "route": [
+      "W",
+      "J1",
+      "J2",
+      "J5",
+      "J6",
+      "E"
+    ],
+    "prefix": [
+      "W"
+    ],
+    "failed": "J3",
+    "recovery": {
+      "generation": 2,
+      "frontier": "J1",
+      "old": [
+        "W",
+        "J1",
+        "J2",
+        "J3",
+        "J6",
+        "E"
+      ],
+      "successor": [
+        "W",
+        "J1",
+        "J2",
+        "J5",
+        "J6",
+        "E"
+      ],
+      "candidates": [
+        "J1",
+        "J2",
+        "J5",
+        "J6"
+      ],
+      "scope": [
+        "J1",
+        "J2",
+        "J3",
+        "J5",
+        "J6"
+      ],
+      "started": 4.8,
+      "stage": "COMMITTED",
+      "kind": "readback"
+    },
+    "controllers": [
+      {
+        "id": "J1",
+        "profile": "Full readback",
+        "run": "67d8dfed2800",
+        "generation": 2,
+        "mode": "ACTIVE",
+        "config": 1,
+        "readback": true,
+        "writable": true,
+        "online": true,
+        "phase": "GREEN",
+        "observed_phase": "GREEN",
+        "pedestrian_until": 0,
+        "occupied": false,
+        "observed_at": 9.6,
+        "sequence": 7,
+        "rejected": 2,
+        "prepared": {
+          "run": "67d8dfed2800",
+          "controller": "J1",
+          "generation": 2,
+          "capability": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21",
+          "suffix": [
+            "W",
+            "J1",
+            "J2",
+            "J5",
+            "J6",
+            "E"
+          ],
+          "frontier": "J1",
+          "entry": "RED_CLEAR",
+          "commands": [
+            "GREEN",
+            "RED"
+          ],
+          "native_commands": [
+            {
+              "operation": "phase_hold",
+              "state": "GREEN"
+            },
+            {
+              "operation": "phase_hold",
+              "state": "RED"
+            }
+          ]
+        },
+        "committed_capsule": "8eb24d269bb1008cdd1484987f31f4c52387dbc38b915e47661d03a017769d5c",
+        "last_reason": "Command accepted",
+        "committed_state": {
+          "run": "67d8dfed2800",
+          "controller": "J1",
+          "generation": 2,
+          "capsule": "8eb24d269bb1008cdd1484987f31f4c52387dbc38b915e47661d03a017769d5c",
+          "capability": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21",
+          "frontier": "J1",
+          "suffix": [
+            "W",
+            "J1",
+            "J2",
+            "J5",
+            "J6",
+            "E"
+          ],
+          "issued": 8.2,
+          "expires": 9.2,
+          "evidence": {
+            "controller": "J1",
+            "phase": "RED",
+            "occupied": false,
+            "pedestrian_clear": true,
+            "observed_at": 8.2,
+            "capability": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21"
+          },
+          "vehicle_before_frontier": true
+        },
+        "capability_digest": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21",
+        "evidence_age": 0,
+        "ready": false
+      },
+      {
+        "id": "J2",
+        "profile": "Limited adapter",
+        "run": "67d8dfed2800",
+        "generation": 2,
+        "mode": "COMMITTED",
+        "config": 1,
+        "readback": true,
+        "writable": true,
+        "online": true,
+        "phase": "RED",
+        "observed_phase": "RED",
+        "pedestrian_until": 0,
+        "occupied": false,
+        "observed_at": 9.6,
+        "sequence": -1,
+        "rejected": 0,
+        "prepared": {
+          "run": "67d8dfed2800",
+          "controller": "J2",
+          "generation": 2,
+          "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+          "suffix": [
+            "W",
+            "J1",
+            "J2",
+            "J5",
+            "J6",
+            "E"
+          ],
+          "frontier": "J1",
+          "entry": "RED_CLEAR",
+          "commands": [
+            "GREEN",
+            "RED"
+          ],
+          "native_commands": [
+            {
+              "operation": "select_program",
+              "program": "priority"
+            },
+            {
+              "operation": "select_program",
+              "program": "clearance"
+            }
+          ]
+        },
+        "committed_capsule": "6d5d4763a972de6f6b97c58d06712fda85ee1a12193ceeb077d05108c7b7ae3f",
+        "last_reason": "Verified locally; waiting for corridor release",
+        "committed_state": {
+          "run": "67d8dfed2800",
+          "controller": "J2",
+          "generation": 2,
+          "capsule": "6d5d4763a972de6f6b97c58d06712fda85ee1a12193ceeb077d05108c7b7ae3f",
+          "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+          "frontier": "J1",
+          "suffix": [
+            "W",
+            "J1",
+            "J2",
+            "J5",
+            "J6",
+            "E"
+          ],
+          "issued": 5.8,
+          "expires": 6.8,
+          "evidence": {
+            "controller": "J2",
+            "phase": "RED",
+            "occupied": false,
+            "pedestrian_clear": true,
+            "observed_at": 5.8,
+            "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e"
+          },
+          "vehicle_before_frontier": true
+        },
+        "capability_digest": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+        "evidence_age": 0,
+        "ready": true
+      },
+      {
+        "id": "J3",
+        "profile": "Gateway adapter",
+        "run": "67d8dfed2800",
+        "generation": 1,
+        "mode": "FROZEN",
+        "config": 1,
+        "readback": false,
+        "writable": true,
+        "online": true,
+        "phase": "RED",
+        "observed_phase": "RED",
+        "pedestrian_until": 0,
+        "occupied": false,
+        "observed_at": 4.8,
+        "sequence": -1,
+        "rejected": 0,
+        "prepared": null,
+        "committed_capsule": null,
+        "last_reason": "Old actuation authority revoked locally",
+        "committed_state": null,
+        "capability_digest": "3459533b704076c9d4b5c4cf5c1774f9d19f690470949339a4bdbb8cf448ba7a",
+        "evidence_age": 4.8,
+        "ready": false
+      },
+      {
+        "id": "J4",
+        "profile": "Full readback",
+        "run": "67d8dfed2800",
+        "generation": 1,
+        "mode": "ACTIVE",
+        "config": 1,
+        "readback": true,
+        "writable": true,
+        "online": true,
+        "phase": "RED",
+        "observed_phase": "RED",
+        "pedestrian_until": 0,
+        "occupied": false,
+        "observed_at": 9.6,
+        "sequence": -1,
+        "rejected": 0,
+        "prepared": null,
+        "committed_capsule": null,
+        "last_reason": "Ready",
+        "committed_state": null,
+        "capability_digest": "c76184c8e746643be72cb9879afcca50152175c4a17e2740cbe2af6c918519cb",
+        "evidence_age": 0,
+        "ready": true
+      },
+      {
+        "id": "J5",
+        "profile": "Limited adapter",
+        "run": "67d8dfed2800",
+        "generation": 2,
+        "mode": "COMMITTED",
+        "config": 1,
+        "readback": true,
+        "writable": true,
+        "online": true,
+        "phase": "RED",
+        "observed_phase": "RED",
+        "pedestrian_until": 0,
+        "occupied": false,
+        "observed_at": 9.6,
+        "sequence": -1,
+        "rejected": 0,
+        "prepared": {
+          "run": "67d8dfed2800",
+          "controller": "J5",
+          "generation": 2,
+          "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+          "suffix": [
+            "W",
+            "J1",
+            "J2",
+            "J5",
+            "J6",
+            "E"
+          ],
+          "frontier": "J1",
+          "entry": "RED_CLEAR",
+          "commands": [
+            "GREEN",
+            "RED"
+          ],
+          "native_commands": [
+            {
+              "operation": "select_program",
+              "program": "priority"
+            },
+            {
+              "operation": "select_program",
+              "program": "clearance"
+            }
+          ]
+        },
+        "committed_capsule": "dffd89ae03e141b7bb6e7f97c0be64e0b668496c360ec13ed81b2ed25e619a66",
+        "last_reason": "Verified locally; waiting for corridor release",
+        "committed_state": {
+          "run": "67d8dfed2800",
+          "controller": "J5",
+          "generation": 2,
+          "capsule": "dffd89ae03e141b7bb6e7f97c0be64e0b668496c360ec13ed81b2ed25e619a66",
+          "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+          "frontier": "J1",
+          "suffix": [
+            "W",
+            "J1",
+            "J2",
+            "J5",
+            "J6",
+            "E"
+          ],
+          "issued": 5.8,
+          "expires": 6.8,
+          "evidence": {
+            "controller": "J5",
+            "phase": "RED",
+            "occupied": false,
+            "pedestrian_clear": true,
+            "observed_at": 5.8,
+            "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df"
+          },
+          "vehicle_before_frontier": true
+        },
+        "capability_digest": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+        "evidence_age": 0,
+        "ready": true
+      },
+      {
+        "id": "J6",
+        "profile": "Gateway adapter",
+        "run": "67d8dfed2800",
+        "generation": 2,
+        "mode": "COMMITTED",
+        "config": 1,
+        "readback": true,
+        "writable": true,
+        "online": true,
+        "phase": "RED",
+        "observed_phase": "RED",
+        "pedestrian_until": 0,
+        "occupied": false,
+        "observed_at": 9.6,
+        "sequence": -1,
+        "rejected": 0,
+        "prepared": {
+          "run": "67d8dfed2800",
+          "controller": "J6",
+          "generation": 2,
+          "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+          "suffix": [
+            "W",
+            "J1",
+            "J2",
+            "J5",
+            "J6",
+            "E"
+          ],
+          "frontier": "J1",
+          "entry": "RED_CLEAR",
+          "commands": [
+            "GREEN",
+            "RED"
+          ],
+          "native_commands": [
+            {
+              "operation": "gateway_permission",
+              "allow_movement": true
+            },
+            {
+              "operation": "gateway_permission",
+              "allow_movement": false
+            }
+          ]
+        },
+        "committed_capsule": "6fcc8dc1498d9ba42a2f3bc736b40a3b16da362fd2674c6a9b3a63160ad515ef",
+        "last_reason": "Verified locally; waiting for corridor release",
+        "committed_state": {
+          "run": "67d8dfed2800",
+          "controller": "J6",
+          "generation": 2,
+          "capsule": "6fcc8dc1498d9ba42a2f3bc736b40a3b16da362fd2674c6a9b3a63160ad515ef",
+          "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+          "frontier": "J1",
+          "suffix": [
+            "W",
+            "J1",
+            "J2",
+            "J5",
+            "J6",
+            "E"
+          ],
+          "issued": 5.8,
+          "expires": 6.8,
+          "evidence": {
+            "controller": "J6",
+            "phase": "RED",
+            "occupied": false,
+            "pedestrian_clear": true,
+            "observed_at": 5.8,
+            "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5"
+          },
+          "vehicle_before_frontier": true
+        },
+        "capability_digest": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+        "evidence_age": 0,
+        "ready": true
+      }
+    ],
+    "vehicles": [
+      {
+        "id": "ambulance",
+        "x": -37.682159242924996,
+        "y": -1.6,
+        "angle": 0
+      },
+      {
+        "id": "car-0",
+        "x": 168.3888597046772,
+        "y": 81.6,
+        "angle": -3.141592653589793
+      },
+      {
+        "id": "car-1",
+        "x": 187.3948591763398,
+        "y": 81.6,
+        "angle": -3.141592653589793
+      },
+      {
+        "id": "car-2",
+        "x": 213.1692245544444,
+        "y": 81.6,
+        "angle": -3.141592653589793
+      },
+      {
+        "id": "car-3",
+        "x": 231.29527418681735,
+        "y": 81.6,
+        "angle": -3.141592653589793
+      }
+    ],
+    "ambulance_speed": 12.8,
+    "metrics": {
+      "reconfigured": 5,
+      "recovery_seconds": 3.4,
+      "stale_rejected": 1,
+      "unsafe_acceptances": 0,
+      "fallbacks": 0,
+      "prefix_mutations": 0
+    },
+    "certificates": [
+      {
+        "body": {
+          "run": "67d8dfed2800",
+          "controller": "J2",
+          "generation": 2,
+          "capsule": "6d5d4763a972de6f6b97c58d06712fda85ee1a12193ceeb077d05108c7b7ae3f",
+          "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+          "frontier": "J1",
+          "suffix": [
+            "W",
+            "J1",
+            "J2",
+            "J5",
+            "J6",
+            "E"
+          ],
+          "issued": 5.8,
+          "expires": 6.8,
+          "evidence": {
+            "controller": "J2",
+            "phase": "RED",
+            "occupied": false,
+            "pedestrian_clear": true,
+            "observed_at": 5.8,
+            "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e"
+          },
+          "vehicle_before_frontier": true
+        },
+        "signature": "UD5fBlaM0HK+uHtGthoeFOW4n95Rp+PhVsAxru0jocDpBV2W/UyBSX4SJYqbsizhpwsCB8BBFWhbT9Lc4yvdCw=="
+      },
+      {
+        "body": {
+          "run": "67d8dfed2800",
+          "controller": "J5",
+          "generation": 2,
+          "capsule": "dffd89ae03e141b7bb6e7f97c0be64e0b668496c360ec13ed81b2ed25e619a66",
+          "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+          "frontier": "J1",
+          "suffix": [
+            "W",
+            "J1",
+            "J2",
+            "J5",
+            "J6",
+            "E"
+          ],
+          "issued": 5.8,
+          "expires": 6.8,
+          "evidence": {
+            "controller": "J5",
+            "phase": "RED",
+            "occupied": false,
+            "pedestrian_clear": true,
+            "observed_at": 5.8,
+            "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df"
+          },
+          "vehicle_before_frontier": true
+        },
+        "signature": "2rjeEfCrtR/WRFyDeLvqqvNGmXj7bdQ+feh2I5HHUeoMAOfKq5dsWXU0pvMM/w3LcFA2MCs6Tod+wbLctno1AA=="
+      },
+      {
+        "body": {
+          "run": "67d8dfed2800",
+          "controller": "J6",
+          "generation": 2,
+          "capsule": "6fcc8dc1498d9ba42a2f3bc736b40a3b16da362fd2674c6a9b3a63160ad515ef",
+          "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+          "frontier": "J1",
+          "suffix": [
+            "W",
+            "J1",
+            "J2",
+            "J5",
+            "J6",
+            "E"
+          ],
+          "issued": 5.8,
+          "expires": 6.8,
+          "evidence": {
+            "controller": "J6",
+            "phase": "RED",
+            "occupied": false,
+            "pedestrian_clear": true,
+            "observed_at": 5.8,
+            "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5"
+          },
+          "vehicle_before_frontier": true
+        },
+        "signature": "+a+BVR6BLCBU7A87NM3kRGRJvHdwFwlasZ9YgUeBBFp8ZLIsuyWz7v1GKmIXre5+mJyCztWYZJn+G0m0XGVuDA=="
+      },
+      {
+        "body": {
+          "run": "67d8dfed2800",
+          "controller": "J1",
+          "generation": 2,
+          "capsule": "8eb24d269bb1008cdd1484987f31f4c52387dbc38b915e47661d03a017769d5c",
+          "capability": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21",
+          "frontier": "J1",
+          "suffix": [
+            "W",
+            "J1",
+            "J2",
+            "J5",
+            "J6",
+            "E"
+          ],
+          "issued": 8.2,
+          "expires": 9.2,
+          "evidence": {
+            "controller": "J1",
+            "phase": "RED",
+            "occupied": false,
+            "pedestrian_clear": true,
+            "observed_at": 8.2,
+            "capability": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21"
+          },
+          "vehicle_before_frontier": true
+        },
+        "signature": "ZzdVwjjGwtrAGv81aV9Zj43oVXS+DZQAAjxMXAoveHgwpBFyetaFpcmrswYMKY3wF96tZKmVa+M5lx72DGFmBQ=="
+      }
+    ],
+    "faults": [
+      {
+        "at": 4.8,
+        "controller": "J3",
+        "kind": "readback"
+      }
+    ],
+    "collisions": 0,
+    "obligations": [
+      {
+        "id": "movement-J1",
+        "controller": "J1",
+        "requires": [
+          "readback",
+          "write",
+          "configuration",
+          "clearance"
+        ],
+        "completed": false
+      },
+      {
+        "id": "movement-J2",
+        "controller": "J2",
+        "requires": [
+          "readback",
+          "write",
+          "configuration",
+          "clearance"
+        ],
+        "completed": false
+      },
+      {
+        "id": "movement-J3",
+        "controller": "J3",
+        "requires": [
+          "readback",
+          "write",
+          "configuration",
+          "clearance"
+        ],
+        "completed": false
+      },
+      {
+        "id": "movement-J6",
+        "controller": "J6",
+        "requires": [
+          "readback",
+          "write",
+          "configuration",
+          "clearance"
+        ],
+        "completed": false
+      }
+    ],
+    "agent_mode": "process",
+    "events": [
+      {
+        "id": 1,
+        "time": 0,
+        "kind": "SYSTEM",
+        "title": "Corridor initialized",
+        "detail": "SUMO microsimulation · seed 42 · local verification enabled",
+        "controller": null
+      },
+      {
+        "id": 2,
+        "time": 0,
+        "kind": "START",
+        "title": "Emergency corridor activated",
+        "detail": "Generation E1",
+        "controller": null
+      },
+      {
+        "id": 3,
+        "time": 4.8,
+        "kind": "FAULT",
+        "title": "J3 · readback failure",
+        "detail": "Capability or physical-state obligation invalidated",
+        "controller": "J3"
+      },
+      {
+        "id": 4,
+        "time": 4.8,
+        "kind": "FREEZE",
+        "title": "Affected scope isolated",
+        "detail": "Frontier J1 · prepared route will preserve entered edge",
+        "controller": null
+      },
+      {
+        "id": 5,
+        "time": 4.8,
+        "kind": "PREPARE",
+        "title": "Generation E2 prepared",
+        "detail": "Replacement commands have no actuation authority",
+        "controller": null
+      },
+      {
+        "id": 6,
+        "time": 5.8,
+        "kind": "VERIFY",
+        "title": "J2 · state transfer verified",
+        "detail": "Generation persisted; waiting for dependent controllers",
+        "controller": "J2"
+      },
+      {
+        "id": 7,
+        "time": 5.8,
+        "kind": "VERIFY",
+        "title": "J5 · state transfer verified",
+        "detail": "Generation persisted; waiting for dependent controllers",
+        "controller": "J5"
+      },
+      {
+        "id": 8,
+        "time": 5.8,
+        "kind": "VERIFY",
+        "title": "J6 · state transfer verified",
+        "detail": "Generation persisted; waiting for dependent controllers",
+        "controller": "J6"
+      },
+      {
+        "id": 9,
+        "time": 8.2,
+        "kind": "VERIFY",
+        "title": "J1 · state transfer verified",
+        "detail": "Generation persisted; waiting for dependent controllers",
+        "controller": "J1"
+      },
+      {
+        "id": 10,
+        "time": 8.2,
+        "kind": "COMMIT",
+        "title": "Generation E2 released",
+        "detail": "All required successor controllers have locally committed",
+        "controller": null
+      },
+      {
+        "id": 11,
+        "time": 9,
+        "kind": "REJECT",
+        "title": "J1 · old command rejected",
+        "detail": "Superseded or uncommitted generation",
+        "controller": "J1"
+      }
+    ]
+  },
+  "events": [
+    {
+      "id": 1,
+      "time": 0,
+      "kind": "SYSTEM",
+      "title": "Corridor initialized",
+      "detail": "SUMO microsimulation · seed 42 · local verification enabled",
+      "controller": null
+    },
+    {
+      "id": 2,
+      "time": 0,
+      "kind": "START",
+      "title": "Emergency corridor activated",
+      "detail": "Generation E1",
+      "controller": null
+    },
+    {
+      "id": 3,
+      "time": 4.8,
+      "kind": "FAULT",
+      "title": "J3 · readback failure",
+      "detail": "Capability or physical-state obligation invalidated",
+      "controller": "J3"
+    },
+    {
+      "id": 4,
+      "time": 4.8,
+      "kind": "FREEZE",
+      "title": "Affected scope isolated",
+      "detail": "Frontier J1 · prepared route will preserve entered edge",
+      "controller": null
+    },
+    {
+      "id": 5,
+      "time": 4.8,
+      "kind": "PREPARE",
+      "title": "Generation E2 prepared",
+      "detail": "Replacement commands have no actuation authority",
+      "controller": null
+    },
+    {
+      "id": 6,
+      "time": 5.8,
+      "kind": "VERIFY",
+      "title": "J2 · state transfer verified",
+      "detail": "Generation persisted; waiting for dependent controllers",
+      "controller": "J2"
+    },
+    {
+      "id": 7,
+      "time": 5.8,
+      "kind": "VERIFY",
+      "title": "J5 · state transfer verified",
+      "detail": "Generation persisted; waiting for dependent controllers",
+      "controller": "J5"
+    },
+    {
+      "id": 8,
+      "time": 5.8,
+      "kind": "VERIFY",
+      "title": "J6 · state transfer verified",
+      "detail": "Generation persisted; waiting for dependent controllers",
+      "controller": "J6"
+    },
+    {
+      "id": 9,
+      "time": 8.2,
+      "kind": "VERIFY",
+      "title": "J1 · state transfer verified",
+      "detail": "Generation persisted; waiting for dependent controllers",
+      "controller": "J1"
+    },
+    {
+      "id": 10,
+      "time": 8.2,
+      "kind": "COMMIT",
+      "title": "Generation E2 released",
+      "detail": "All required successor controllers have locally committed",
+      "controller": null
+    },
+    {
+      "id": 11,
+      "time": 9,
+      "kind": "REJECT",
+      "title": "J1 · old command rejected",
+      "detail": "Superseded or uncommitted generation",
+      "controller": "J1"
+    }
+  ],
+  "frames": [
+    {
+      "id": "67d8dfed2800",
+      "time": 1,
+      "status": "ACTIVE",
+      "running": true,
+      "mode": "SUMO microsimulation",
+      "seed": 42,
+      "density": 12,
+      "strategy": "partial",
+      "nodes": {
+        "W": [
+          -80,
+          0
+        ],
+        "J1": [
+          0,
+          0
+        ],
+        "J2": [
+          80,
+          0
+        ],
+        "J3": [
+          160,
+          0
+        ],
+        "J4": [
+          0,
+          80
+        ],
+        "J5": [
+          80,
+          80
+        ],
+        "J6": [
+          160,
+          80
+        ],
+        "E": [
+          240,
+          80
+        ]
+      },
+      "pairs": [
+        [
+          "W",
+          "J1"
+        ],
+        [
+          "J1",
+          "J2"
+        ],
+        [
+          "J2",
+          "J3"
+        ],
+        [
+          "J1",
+          "J4"
+        ],
+        [
+          "J2",
+          "J5"
+        ],
+        [
+          "J3",
+          "J6"
+        ],
+        [
+          "J4",
+          "J5"
+        ],
+        [
+          "J5",
+          "J6"
+        ],
+        [
+          "J6",
+          "E"
+        ]
+      ],
+      "route": [
+        "W",
+        "J1",
+        "J2",
+        "J3",
+        "J6",
+        "E"
+      ],
+      "prefix": [],
+      "failed": null,
+      "recovery": null,
+      "controllers": [
+        {
+          "id": "J1",
+          "profile": "Full readback",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "GREEN",
+          "observed_phase": "GREEN",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 1,
+          "sequence": 3,
+          "rejected": 1,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Command accepted",
+          "committed_state": null,
+          "capability_digest": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21",
+          "evidence_age": 0,
+          "ready": false
+        },
+        {
+          "id": "J2",
+          "profile": "Limited adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 1,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J3",
+          "profile": "Gateway adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 1,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "eead2b6a925aee3da018a0cd25580d9d476424dad3e96188cd7dad8726acceb1",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J4",
+          "profile": "Full readback",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 1,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "c76184c8e746643be72cb9879afcca50152175c4a17e2740cbe2af6c918519cb",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J5",
+          "profile": "Limited adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 1,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J6",
+          "profile": "Gateway adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 1,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+          "evidence_age": 0,
+          "ready": true
+        }
+      ],
+      "vehicles": [
+        {
+          "id": "ambulance",
+          "x": -73.51127256378528,
+          "y": -1.6,
+          "angle": 0
+        },
+        {
+          "id": "car-0",
+          "x": 233.5658812690071,
+          "y": 81.6,
+          "angle": -3.141592653589793
+        }
+      ],
+      "ambulance_speed": 8.2,
+      "metrics": {
+        "reconfigured": 0,
+        "recovery_seconds": null,
+        "stale_rejected": 0,
+        "unsafe_acceptances": 0,
+        "fallbacks": 0,
+        "prefix_mutations": 0
+      },
+      "certificates": [],
+      "faults": [],
+      "collisions": 0,
+      "obligations": [
+        {
+          "id": "movement-J1",
+          "controller": "J1",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J2",
+          "controller": "J2",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J3",
+          "controller": "J3",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J6",
+          "controller": "J6",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        }
+      ],
+      "agent_mode": "process"
+    },
+    {
+      "id": "67d8dfed2800",
+      "time": 2,
+      "status": "ACTIVE",
+      "running": true,
+      "mode": "SUMO microsimulation",
+      "seed": 42,
+      "density": 12,
+      "strategy": "partial",
+      "nodes": {
+        "W": [
+          -80,
+          0
+        ],
+        "J1": [
+          0,
+          0
+        ],
+        "J2": [
+          80,
+          0
+        ],
+        "J3": [
+          160,
+          0
+        ],
+        "J4": [
+          0,
+          80
+        ],
+        "J5": [
+          80,
+          80
+        ],
+        "J6": [
+          160,
+          80
+        ],
+        "E": [
+          240,
+          80
+        ]
+      },
+      "pairs": [
+        [
+          "W",
+          "J1"
+        ],
+        [
+          "J1",
+          "J2"
+        ],
+        [
+          "J2",
+          "J3"
+        ],
+        [
+          "J1",
+          "J4"
+        ],
+        [
+          "J2",
+          "J5"
+        ],
+        [
+          "J3",
+          "J6"
+        ],
+        [
+          "J4",
+          "J5"
+        ],
+        [
+          "J5",
+          "J6"
+        ],
+        [
+          "J6",
+          "E"
+        ]
+      ],
+      "route": [
+        "W",
+        "J1",
+        "J2",
+        "J3",
+        "J6",
+        "E"
+      ],
+      "prefix": [],
+      "failed": null,
+      "recovery": null,
+      "controllers": [
+        {
+          "id": "J1",
+          "profile": "Full readback",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "GREEN",
+          "observed_phase": "GREEN",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 2,
+          "sequence": 8,
+          "rejected": 1,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Command accepted",
+          "committed_state": null,
+          "capability_digest": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21",
+          "evidence_age": 0,
+          "ready": false
+        },
+        {
+          "id": "J2",
+          "profile": "Limited adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 2,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J3",
+          "profile": "Gateway adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 2,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "eead2b6a925aee3da018a0cd25580d9d476424dad3e96188cd7dad8726acceb1",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J4",
+          "profile": "Full readback",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 2,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "c76184c8e746643be72cb9879afcca50152175c4a17e2740cbe2af6c918519cb",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J5",
+          "profile": "Limited adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 2,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J6",
+          "profile": "Gateway adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 2,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+          "evidence_age": 0,
+          "ready": true
+        }
+      ],
+      "vehicles": [
+        {
+          "id": "ambulance",
+          "x": -70.0438847418584,
+          "y": -1.6,
+          "angle": 0
+        },
+        {
+          "id": "car-0",
+          "x": 230.19333348793134,
+          "y": 81.6,
+          "angle": -3.141592653589793
+        }
+      ],
+      "ambulance_speed": 15.3,
+      "metrics": {
+        "reconfigured": 0,
+        "recovery_seconds": null,
+        "stale_rejected": 0,
+        "unsafe_acceptances": 0,
+        "fallbacks": 0,
+        "prefix_mutations": 0
+      },
+      "certificates": [],
+      "faults": [],
+      "collisions": 0,
+      "obligations": [
+        {
+          "id": "movement-J1",
+          "controller": "J1",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J2",
+          "controller": "J2",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J3",
+          "controller": "J3",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J6",
+          "controller": "J6",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        }
+      ],
+      "agent_mode": "process"
+    },
+    {
+      "id": "67d8dfed2800",
+      "time": 3,
+      "status": "ACTIVE",
+      "running": true,
+      "mode": "SUMO microsimulation",
+      "seed": 42,
+      "density": 12,
+      "strategy": "partial",
+      "nodes": {
+        "W": [
+          -80,
+          0
+        ],
+        "J1": [
+          0,
+          0
+        ],
+        "J2": [
+          80,
+          0
+        ],
+        "J3": [
+          160,
+          0
+        ],
+        "J4": [
+          0,
+          80
+        ],
+        "J5": [
+          80,
+          80
+        ],
+        "J6": [
+          160,
+          80
+        ],
+        "E": [
+          240,
+          80
+        ]
+      },
+      "pairs": [
+        [
+          "W",
+          "J1"
+        ],
+        [
+          "J1",
+          "J2"
+        ],
+        [
+          "J2",
+          "J3"
+        ],
+        [
+          "J1",
+          "J4"
+        ],
+        [
+          "J2",
+          "J5"
+        ],
+        [
+          "J3",
+          "J6"
+        ],
+        [
+          "J4",
+          "J5"
+        ],
+        [
+          "J5",
+          "J6"
+        ],
+        [
+          "J6",
+          "E"
+        ]
+      ],
+      "route": [
+        "W",
+        "J1",
+        "J2",
+        "J3",
+        "J6",
+        "E"
+      ],
+      "prefix": [],
+      "failed": null,
+      "recovery": null,
+      "controllers": [
+        {
+          "id": "J1",
+          "profile": "Full readback",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "GREEN",
+          "observed_phase": "GREEN",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 3,
+          "sequence": 13,
+          "rejected": 1,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Command accepted",
+          "committed_state": null,
+          "capability_digest": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21",
+          "evidence_age": 0,
+          "ready": false
+        },
+        {
+          "id": "J2",
+          "profile": "Limited adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 3,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J3",
+          "profile": "Gateway adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 3,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "eead2b6a925aee3da018a0cd25580d9d476424dad3e96188cd7dad8726acceb1",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J4",
+          "profile": "Full readback",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 3,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "c76184c8e746643be72cb9879afcca50152175c4a17e2740cbe2af6c918519cb",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J5",
+          "profile": "Limited adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 3,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J6",
+          "profile": "Gateway adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 3,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+          "evidence_age": 0,
+          "ready": true
+        }
+      ],
+      "vehicles": [
+        {
+          "id": "ambulance",
+          "x": -64.68733818819251,
+          "y": -1.6,
+          "angle": 0
+        },
+        {
+          "id": "car-0",
+          "x": 225.03221023259616,
+          "y": 81.6,
+          "angle": -3.141592653589793
+        },
+        {
+          "id": "car-1",
+          "x": 234.6160451863693,
+          "y": 81.6,
+          "angle": -3.141592653589793
+        }
+      ],
+      "ambulance_speed": 22.1,
+      "metrics": {
+        "reconfigured": 0,
+        "recovery_seconds": null,
+        "stale_rejected": 0,
+        "unsafe_acceptances": 0,
+        "fallbacks": 0,
+        "prefix_mutations": 0
+      },
+      "certificates": [],
+      "faults": [],
+      "collisions": 0,
+      "obligations": [
+        {
+          "id": "movement-J1",
+          "controller": "J1",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J2",
+          "controller": "J2",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J3",
+          "controller": "J3",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J6",
+          "controller": "J6",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        }
+      ],
+      "agent_mode": "process"
+    },
+    {
+      "id": "67d8dfed2800",
+      "time": 4,
+      "status": "ACTIVE",
+      "running": true,
+      "mode": "SUMO microsimulation",
+      "seed": 42,
+      "density": 12,
+      "strategy": "partial",
+      "nodes": {
+        "W": [
+          -80,
+          0
+        ],
+        "J1": [
+          0,
+          0
+        ],
+        "J2": [
+          80,
+          0
+        ],
+        "J3": [
+          160,
+          0
+        ],
+        "J4": [
+          0,
+          80
+        ],
+        "J5": [
+          80,
+          80
+        ],
+        "J6": [
+          160,
+          80
+        ],
+        "E": [
+          240,
+          80
+        ]
+      },
+      "pairs": [
+        [
+          "W",
+          "J1"
+        ],
+        [
+          "J1",
+          "J2"
+        ],
+        [
+          "J2",
+          "J3"
+        ],
+        [
+          "J1",
+          "J4"
+        ],
+        [
+          "J2",
+          "J5"
+        ],
+        [
+          "J3",
+          "J6"
+        ],
+        [
+          "J4",
+          "J5"
+        ],
+        [
+          "J5",
+          "J6"
+        ],
+        [
+          "J6",
+          "E"
+        ]
+      ],
+      "route": [
+        "W",
+        "J1",
+        "J2",
+        "J3",
+        "J6",
+        "E"
+      ],
+      "prefix": [],
+      "failed": null,
+      "recovery": null,
+      "controllers": [
+        {
+          "id": "J1",
+          "profile": "Full readback",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "GREEN",
+          "observed_phase": "GREEN",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 4,
+          "sequence": 18,
+          "rejected": 1,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Command accepted",
+          "committed_state": null,
+          "capability_digest": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21",
+          "evidence_age": 0,
+          "ready": false
+        },
+        {
+          "id": "J2",
+          "profile": "Limited adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 4,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J3",
+          "profile": "Gateway adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 4,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "eead2b6a925aee3da018a0cd25580d9d476424dad3e96188cd7dad8726acceb1",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J4",
+          "profile": "Full readback",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 4,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "c76184c8e746643be72cb9879afcca50152175c4a17e2740cbe2af6c918519cb",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J5",
+          "profile": "Limited adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 4,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J6",
+          "profile": "Gateway adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 4,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+          "evidence_age": 0,
+          "ready": true
+        }
+      ],
+      "vehicles": [
+        {
+          "id": "ambulance",
+          "x": -57.50419156658698,
+          "y": -1.6,
+          "angle": 0
+        },
+        {
+          "id": "car-0",
+          "x": 217.9080856949518,
+          "y": 81.6,
+          "angle": -3.141592653589793
+        },
+        {
+          "id": "car-1",
+          "x": 232.35659795742427,
+          "y": 81.6,
+          "angle": -3.141592653589793
+        }
+      ],
+      "ambulance_speed": 28.7,
+      "metrics": {
+        "reconfigured": 0,
+        "recovery_seconds": null,
+        "stale_rejected": 0,
+        "unsafe_acceptances": 0,
+        "fallbacks": 0,
+        "prefix_mutations": 0
+      },
+      "certificates": [],
+      "faults": [],
+      "collisions": 0,
+      "obligations": [
+        {
+          "id": "movement-J1",
+          "controller": "J1",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J2",
+          "controller": "J2",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J3",
+          "controller": "J3",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J6",
+          "controller": "J6",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        }
+      ],
+      "agent_mode": "process"
+    },
+    {
+      "id": "67d8dfed2800",
+      "time": 5,
+      "status": "RECOVERING",
+      "running": true,
+      "mode": "SUMO microsimulation",
+      "seed": 42,
+      "density": 12,
+      "strategy": "partial",
+      "nodes": {
+        "W": [
+          -80,
+          0
+        ],
+        "J1": [
+          0,
+          0
+        ],
+        "J2": [
+          80,
+          0
+        ],
+        "J3": [
+          160,
+          0
+        ],
+        "J4": [
+          0,
+          80
+        ],
+        "J5": [
+          80,
+          80
+        ],
+        "J6": [
+          160,
+          80
+        ],
+        "E": [
+          240,
+          80
+        ]
+      },
+      "pairs": [
+        [
+          "W",
+          "J1"
+        ],
+        [
+          "J1",
+          "J2"
+        ],
+        [
+          "J2",
+          "J3"
+        ],
+        [
+          "J1",
+          "J4"
+        ],
+        [
+          "J2",
+          "J5"
+        ],
+        [
+          "J3",
+          "J6"
+        ],
+        [
+          "J4",
+          "J5"
+        ],
+        [
+          "J5",
+          "J6"
+        ],
+        [
+          "J6",
+          "E"
+        ]
+      ],
+      "route": [
+        "W",
+        "J1",
+        "J2",
+        "J3",
+        "J6",
+        "E"
+      ],
+      "prefix": [
+        "W"
+      ],
+      "failed": "J3",
+      "recovery": {
+        "generation": 2,
+        "frontier": "J1",
+        "old": [
+          "W",
+          "J1",
+          "J2",
+          "J3",
+          "J6",
+          "E"
+        ],
+        "successor": [
+          "W",
+          "J1",
+          "J2",
+          "J5",
+          "J6",
+          "E"
+        ],
+        "candidates": [
+          "J1",
+          "J2",
+          "J5",
+          "J6"
+        ],
+        "scope": [
+          "J1",
+          "J2",
+          "J3",
+          "J5",
+          "J6"
+        ],
+        "started": 4.8,
+        "stage": "CLEARANCE",
+        "kind": "readback"
+      },
+      "controllers": [
+        {
+          "id": "J1",
+          "profile": "Full readback",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "PREPARED",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "YELLOW",
+          "observed_phase": "GREEN",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 5,
+          "sequence": 22,
+          "rejected": 1,
+          "prepared": {
+            "run": "67d8dfed2800",
+            "controller": "J1",
+            "generation": 2,
+            "capability": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "frontier": "J1",
+            "entry": "RED_CLEAR",
+            "commands": [
+              "GREEN",
+              "RED"
+            ],
+            "native_commands": [
+              {
+                "operation": "phase_hold",
+                "state": "GREEN"
+              },
+              {
+                "operation": "phase_hold",
+                "state": "RED"
+              }
+            ]
+          },
+          "committed_capsule": null,
+          "last_reason": "Observed signal clearance incomplete",
+          "committed_state": null,
+          "capability_digest": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21",
+          "evidence_age": 0,
+          "ready": false
+        },
+        {
+          "id": "J2",
+          "profile": "Limited adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "PREPARED",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 5,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": {
+            "run": "67d8dfed2800",
+            "controller": "J2",
+            "generation": 2,
+            "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "frontier": "J1",
+            "entry": "RED_CLEAR",
+            "commands": [
+              "GREEN",
+              "RED"
+            ],
+            "native_commands": [
+              {
+                "operation": "select_program",
+                "program": "priority"
+              },
+              {
+                "operation": "select_program",
+                "program": "clearance"
+              }
+            ]
+          },
+          "committed_capsule": null,
+          "last_reason": "State predicates satisfied",
+          "committed_state": null,
+          "capability_digest": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J3",
+          "profile": "Gateway adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "FROZEN",
+          "config": 1,
+          "readback": false,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 4.8,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Old actuation authority revoked locally",
+          "committed_state": null,
+          "capability_digest": "3459533b704076c9d4b5c4cf5c1774f9d19f690470949339a4bdbb8cf448ba7a",
+          "evidence_age": 0.2,
+          "ready": false
+        },
+        {
+          "id": "J4",
+          "profile": "Full readback",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 5,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "c76184c8e746643be72cb9879afcca50152175c4a17e2740cbe2af6c918519cb",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J5",
+          "profile": "Limited adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "PREPARED",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 5,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": {
+            "run": "67d8dfed2800",
+            "controller": "J5",
+            "generation": 2,
+            "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "frontier": "J1",
+            "entry": "RED_CLEAR",
+            "commands": [
+              "GREEN",
+              "RED"
+            ],
+            "native_commands": [
+              {
+                "operation": "select_program",
+                "program": "priority"
+              },
+              {
+                "operation": "select_program",
+                "program": "clearance"
+              }
+            ]
+          },
+          "committed_capsule": null,
+          "last_reason": "State predicates satisfied",
+          "committed_state": null,
+          "capability_digest": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J6",
+          "profile": "Gateway adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "PREPARED",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 5,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": {
+            "run": "67d8dfed2800",
+            "controller": "J6",
+            "generation": 2,
+            "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "frontier": "J1",
+            "entry": "RED_CLEAR",
+            "commands": [
+              "GREEN",
+              "RED"
+            ],
+            "native_commands": [
+              {
+                "operation": "gateway_permission",
+                "allow_movement": true
+              },
+              {
+                "operation": "gateway_permission",
+                "allow_movement": false
+              }
+            ]
+          },
+          "committed_capsule": null,
+          "last_reason": "State predicates satisfied",
+          "committed_state": null,
+          "capability_digest": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+          "evidence_age": 0,
+          "ready": true
+        }
+      ],
+      "vehicles": [
+        {
+          "id": "ambulance",
+          "x": -48.62267211424409,
+          "y": -1.6,
+          "angle": 0
+        },
+        {
+          "id": "car-0",
+          "x": 208.76018786714826,
+          "y": 81.6,
+          "angle": -3.141592653589793
+        },
+        {
+          "id": "car-1",
+          "x": 227.8449469078654,
+          "y": 81.6,
+          "angle": -3.141592653589793
+        }
+      ],
+      "ambulance_speed": 31.3,
+      "metrics": {
+        "reconfigured": 5,
+        "recovery_seconds": null,
+        "stale_rejected": 0,
+        "unsafe_acceptances": 0,
+        "fallbacks": 0,
+        "prefix_mutations": 0
+      },
+      "certificates": [],
+      "faults": [
+        {
+          "at": 4.8,
+          "controller": "J3",
+          "kind": "readback"
+        }
+      ],
+      "collisions": 0,
+      "obligations": [
+        {
+          "id": "movement-J1",
+          "controller": "J1",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J2",
+          "controller": "J2",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J3",
+          "controller": "J3",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J6",
+          "controller": "J6",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        }
+      ],
+      "agent_mode": "process"
+    },
+    {
+      "id": "67d8dfed2800",
+      "time": 6,
+      "status": "RECOVERING",
+      "running": true,
+      "mode": "SUMO microsimulation",
+      "seed": 42,
+      "density": 12,
+      "strategy": "partial",
+      "nodes": {
+        "W": [
+          -80,
+          0
+        ],
+        "J1": [
+          0,
+          0
+        ],
+        "J2": [
+          80,
+          0
+        ],
+        "J3": [
+          160,
+          0
+        ],
+        "J4": [
+          0,
+          80
+        ],
+        "J5": [
+          80,
+          80
+        ],
+        "J6": [
+          160,
+          80
+        ],
+        "E": [
+          240,
+          80
+        ]
+      },
+      "pairs": [
+        [
+          "W",
+          "J1"
+        ],
+        [
+          "J1",
+          "J2"
+        ],
+        [
+          "J2",
+          "J3"
+        ],
+        [
+          "J1",
+          "J4"
+        ],
+        [
+          "J2",
+          "J5"
+        ],
+        [
+          "J3",
+          "J6"
+        ],
+        [
+          "J4",
+          "J5"
+        ],
+        [
+          "J5",
+          "J6"
+        ],
+        [
+          "J6",
+          "E"
+        ]
+      ],
+      "route": [
+        "W",
+        "J1",
+        "J2",
+        "J3",
+        "J6",
+        "E"
+      ],
+      "prefix": [
+        "W"
+      ],
+      "failed": "J3",
+      "recovery": {
+        "generation": 2,
+        "frontier": "J1",
+        "old": [
+          "W",
+          "J1",
+          "J2",
+          "J3",
+          "J6",
+          "E"
+        ],
+        "successor": [
+          "W",
+          "J1",
+          "J2",
+          "J5",
+          "J6",
+          "E"
+        ],
+        "candidates": [
+          "J1",
+          "J2",
+          "J5",
+          "J6"
+        ],
+        "scope": [
+          "J1",
+          "J2",
+          "J3",
+          "J5",
+          "J6"
+        ],
+        "started": 4.8,
+        "stage": "CLEARANCE",
+        "kind": "readback"
+      },
+      "controllers": [
+        {
+          "id": "J1",
+          "profile": "Full readback",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "PREPARED",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "YELLOW",
+          "observed_phase": "YELLOW",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 6,
+          "sequence": 22,
+          "rejected": 1,
+          "prepared": {
+            "run": "67d8dfed2800",
+            "controller": "J1",
+            "generation": 2,
+            "capability": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "frontier": "J1",
+            "entry": "RED_CLEAR",
+            "commands": [
+              "GREEN",
+              "RED"
+            ],
+            "native_commands": [
+              {
+                "operation": "phase_hold",
+                "state": "GREEN"
+              },
+              {
+                "operation": "phase_hold",
+                "state": "RED"
+              }
+            ]
+          },
+          "committed_capsule": null,
+          "last_reason": "Observed signal clearance incomplete",
+          "committed_state": null,
+          "capability_digest": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21",
+          "evidence_age": 0,
+          "ready": false
+        },
+        {
+          "id": "J2",
+          "profile": "Limited adapter",
+          "run": "67d8dfed2800",
+          "generation": 2,
+          "mode": "COMMITTED",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 6,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": {
+            "run": "67d8dfed2800",
+            "controller": "J2",
+            "generation": 2,
+            "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "frontier": "J1",
+            "entry": "RED_CLEAR",
+            "commands": [
+              "GREEN",
+              "RED"
+            ],
+            "native_commands": [
+              {
+                "operation": "select_program",
+                "program": "priority"
+              },
+              {
+                "operation": "select_program",
+                "program": "clearance"
+              }
+            ]
+          },
+          "committed_capsule": "6d5d4763a972de6f6b97c58d06712fda85ee1a12193ceeb077d05108c7b7ae3f",
+          "last_reason": "Verified locally; waiting for corridor release",
+          "committed_state": {
+            "run": "67d8dfed2800",
+            "controller": "J2",
+            "generation": 2,
+            "capsule": "6d5d4763a972de6f6b97c58d06712fda85ee1a12193ceeb077d05108c7b7ae3f",
+            "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J2",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e"
+            },
+            "vehicle_before_frontier": true
+          },
+          "capability_digest": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J3",
+          "profile": "Gateway adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "FROZEN",
+          "config": 1,
+          "readback": false,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 4.8,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Old actuation authority revoked locally",
+          "committed_state": null,
+          "capability_digest": "3459533b704076c9d4b5c4cf5c1774f9d19f690470949339a4bdbb8cf448ba7a",
+          "evidence_age": 1.2,
+          "ready": false
+        },
+        {
+          "id": "J4",
+          "profile": "Full readback",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 6,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "c76184c8e746643be72cb9879afcca50152175c4a17e2740cbe2af6c918519cb",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J5",
+          "profile": "Limited adapter",
+          "run": "67d8dfed2800",
+          "generation": 2,
+          "mode": "COMMITTED",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 6,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": {
+            "run": "67d8dfed2800",
+            "controller": "J5",
+            "generation": 2,
+            "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "frontier": "J1",
+            "entry": "RED_CLEAR",
+            "commands": [
+              "GREEN",
+              "RED"
+            ],
+            "native_commands": [
+              {
+                "operation": "select_program",
+                "program": "priority"
+              },
+              {
+                "operation": "select_program",
+                "program": "clearance"
+              }
+            ]
+          },
+          "committed_capsule": "dffd89ae03e141b7bb6e7f97c0be64e0b668496c360ec13ed81b2ed25e619a66",
+          "last_reason": "Verified locally; waiting for corridor release",
+          "committed_state": {
+            "run": "67d8dfed2800",
+            "controller": "J5",
+            "generation": 2,
+            "capsule": "dffd89ae03e141b7bb6e7f97c0be64e0b668496c360ec13ed81b2ed25e619a66",
+            "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J5",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df"
+            },
+            "vehicle_before_frontier": true
+          },
+          "capability_digest": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J6",
+          "profile": "Gateway adapter",
+          "run": "67d8dfed2800",
+          "generation": 2,
+          "mode": "COMMITTED",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 6,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": {
+            "run": "67d8dfed2800",
+            "controller": "J6",
+            "generation": 2,
+            "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "frontier": "J1",
+            "entry": "RED_CLEAR",
+            "commands": [
+              "GREEN",
+              "RED"
+            ],
+            "native_commands": [
+              {
+                "operation": "gateway_permission",
+                "allow_movement": true
+              },
+              {
+                "operation": "gateway_permission",
+                "allow_movement": false
+              }
+            ]
+          },
+          "committed_capsule": "6fcc8dc1498d9ba42a2f3bc736b40a3b16da362fd2674c6a9b3a63160ad515ef",
+          "last_reason": "Verified locally; waiting for corridor release",
+          "committed_state": {
+            "run": "67d8dfed2800",
+            "controller": "J6",
+            "generation": 2,
+            "capsule": "6fcc8dc1498d9ba42a2f3bc736b40a3b16da362fd2674c6a9b3a63160ad515ef",
+            "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J6",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5"
+            },
+            "vehicle_before_frontier": true
+          },
+          "capability_digest": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+          "evidence_age": 0,
+          "ready": true
+        }
+      ],
+      "vehicles": [
+        {
+          "id": "ambulance",
+          "x": -42.62706914888904,
+          "y": -1.6,
+          "angle": 0
+        },
+        {
+          "id": "car-0",
+          "x": 197.92938911952547,
+          "y": 81.6,
+          "angle": -3.141592653589793
+        },
+        {
+          "id": "car-1",
+          "x": 221.37234054740023,
+          "y": 81.6,
+          "angle": -3.141592653589793
+        },
+        {
+          "id": "car-2",
+          "x": 233.9739820281707,
+          "y": 81.6,
+          "angle": -3.141592653589793
+        }
+      ],
+      "ambulance_speed": 15.1,
+      "metrics": {
+        "reconfigured": 5,
+        "recovery_seconds": null,
+        "stale_rejected": 0,
+        "unsafe_acceptances": 0,
+        "fallbacks": 0,
+        "prefix_mutations": 0
+      },
+      "certificates": [
+        {
+          "body": {
+            "run": "67d8dfed2800",
+            "controller": "J2",
+            "generation": 2,
+            "capsule": "6d5d4763a972de6f6b97c58d06712fda85ee1a12193ceeb077d05108c7b7ae3f",
+            "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J2",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e"
+            },
+            "vehicle_before_frontier": true
+          },
+          "signature": "UD5fBlaM0HK+uHtGthoeFOW4n95Rp+PhVsAxru0jocDpBV2W/UyBSX4SJYqbsizhpwsCB8BBFWhbT9Lc4yvdCw=="
+        },
+        {
+          "body": {
+            "run": "67d8dfed2800",
+            "controller": "J5",
+            "generation": 2,
+            "capsule": "dffd89ae03e141b7bb6e7f97c0be64e0b668496c360ec13ed81b2ed25e619a66",
+            "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J5",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df"
+            },
+            "vehicle_before_frontier": true
+          },
+          "signature": "2rjeEfCrtR/WRFyDeLvqqvNGmXj7bdQ+feh2I5HHUeoMAOfKq5dsWXU0pvMM/w3LcFA2MCs6Tod+wbLctno1AA=="
+        },
+        {
+          "body": {
+            "run": "67d8dfed2800",
+            "controller": "J6",
+            "generation": 2,
+            "capsule": "6fcc8dc1498d9ba42a2f3bc736b40a3b16da362fd2674c6a9b3a63160ad515ef",
+            "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J6",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5"
+            },
+            "vehicle_before_frontier": true
+          },
+          "signature": "+a+BVR6BLCBU7A87NM3kRGRJvHdwFwlasZ9YgUeBBFp8ZLIsuyWz7v1GKmIXre5+mJyCztWYZJn+G0m0XGVuDA=="
+        }
+      ],
+      "faults": [
+        {
+          "at": 4.8,
+          "controller": "J3",
+          "kind": "readback"
+        }
+      ],
+      "collisions": 0,
+      "obligations": [
+        {
+          "id": "movement-J1",
+          "controller": "J1",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J2",
+          "controller": "J2",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J3",
+          "controller": "J3",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J6",
+          "controller": "J6",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        }
+      ],
+      "agent_mode": "process"
+    },
+    {
+      "id": "67d8dfed2800",
+      "time": 7,
+      "status": "RECOVERING",
+      "running": true,
+      "mode": "SUMO microsimulation",
+      "seed": 42,
+      "density": 12,
+      "strategy": "partial",
+      "nodes": {
+        "W": [
+          -80,
+          0
+        ],
+        "J1": [
+          0,
+          0
+        ],
+        "J2": [
+          80,
+          0
+        ],
+        "J3": [
+          160,
+          0
+        ],
+        "J4": [
+          0,
+          80
+        ],
+        "J5": [
+          80,
+          80
+        ],
+        "J6": [
+          160,
+          80
+        ],
+        "E": [
+          240,
+          80
+        ]
+      },
+      "pairs": [
+        [
+          "W",
+          "J1"
+        ],
+        [
+          "J1",
+          "J2"
+        ],
+        [
+          "J2",
+          "J3"
+        ],
+        [
+          "J1",
+          "J4"
+        ],
+        [
+          "J2",
+          "J5"
+        ],
+        [
+          "J3",
+          "J6"
+        ],
+        [
+          "J4",
+          "J5"
+        ],
+        [
+          "J5",
+          "J6"
+        ],
+        [
+          "J6",
+          "E"
+        ]
+      ],
+      "route": [
+        "W",
+        "J1",
+        "J2",
+        "J3",
+        "J6",
+        "E"
+      ],
+      "prefix": [
+        "W"
+      ],
+      "failed": "J3",
+      "recovery": {
+        "generation": 2,
+        "frontier": "J1",
+        "old": [
+          "W",
+          "J1",
+          "J2",
+          "J3",
+          "J6",
+          "E"
+        ],
+        "successor": [
+          "W",
+          "J1",
+          "J2",
+          "J5",
+          "J6",
+          "E"
+        ],
+        "candidates": [
+          "J1",
+          "J2",
+          "J5",
+          "J6"
+        ],
+        "scope": [
+          "J1",
+          "J2",
+          "J3",
+          "J5",
+          "J6"
+        ],
+        "started": 4.8,
+        "stage": "CLEARANCE",
+        "kind": "readback"
+      },
+      "controllers": [
+        {
+          "id": "J1",
+          "profile": "Full readback",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "PREPARED",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "YELLOW",
+          "observed_phase": "YELLOW",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 7,
+          "sequence": 22,
+          "rejected": 1,
+          "prepared": {
+            "run": "67d8dfed2800",
+            "controller": "J1",
+            "generation": 2,
+            "capability": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "frontier": "J1",
+            "entry": "RED_CLEAR",
+            "commands": [
+              "GREEN",
+              "RED"
+            ],
+            "native_commands": [
+              {
+                "operation": "phase_hold",
+                "state": "GREEN"
+              },
+              {
+                "operation": "phase_hold",
+                "state": "RED"
+              }
+            ]
+          },
+          "committed_capsule": null,
+          "last_reason": "Observed signal clearance incomplete",
+          "committed_state": null,
+          "capability_digest": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21",
+          "evidence_age": 0,
+          "ready": false
+        },
+        {
+          "id": "J2",
+          "profile": "Limited adapter",
+          "run": "67d8dfed2800",
+          "generation": 2,
+          "mode": "COMMITTED",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 7,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": {
+            "run": "67d8dfed2800",
+            "controller": "J2",
+            "generation": 2,
+            "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "frontier": "J1",
+            "entry": "RED_CLEAR",
+            "commands": [
+              "GREEN",
+              "RED"
+            ],
+            "native_commands": [
+              {
+                "operation": "select_program",
+                "program": "priority"
+              },
+              {
+                "operation": "select_program",
+                "program": "clearance"
+              }
+            ]
+          },
+          "committed_capsule": "6d5d4763a972de6f6b97c58d06712fda85ee1a12193ceeb077d05108c7b7ae3f",
+          "last_reason": "Verified locally; waiting for corridor release",
+          "committed_state": {
+            "run": "67d8dfed2800",
+            "controller": "J2",
+            "generation": 2,
+            "capsule": "6d5d4763a972de6f6b97c58d06712fda85ee1a12193ceeb077d05108c7b7ae3f",
+            "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J2",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e"
+            },
+            "vehicle_before_frontier": true
+          },
+          "capability_digest": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J3",
+          "profile": "Gateway adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "FROZEN",
+          "config": 1,
+          "readback": false,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 4.8,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Old actuation authority revoked locally",
+          "committed_state": null,
+          "capability_digest": "3459533b704076c9d4b5c4cf5c1774f9d19f690470949339a4bdbb8cf448ba7a",
+          "evidence_age": 2.2,
+          "ready": false
+        },
+        {
+          "id": "J4",
+          "profile": "Full readback",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 7,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "c76184c8e746643be72cb9879afcca50152175c4a17e2740cbe2af6c918519cb",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J5",
+          "profile": "Limited adapter",
+          "run": "67d8dfed2800",
+          "generation": 2,
+          "mode": "COMMITTED",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 7,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": {
+            "run": "67d8dfed2800",
+            "controller": "J5",
+            "generation": 2,
+            "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "frontier": "J1",
+            "entry": "RED_CLEAR",
+            "commands": [
+              "GREEN",
+              "RED"
+            ],
+            "native_commands": [
+              {
+                "operation": "select_program",
+                "program": "priority"
+              },
+              {
+                "operation": "select_program",
+                "program": "clearance"
+              }
+            ]
+          },
+          "committed_capsule": "dffd89ae03e141b7bb6e7f97c0be64e0b668496c360ec13ed81b2ed25e619a66",
+          "last_reason": "Verified locally; waiting for corridor release",
+          "committed_state": {
+            "run": "67d8dfed2800",
+            "controller": "J5",
+            "generation": 2,
+            "capsule": "dffd89ae03e141b7bb6e7f97c0be64e0b668496c360ec13ed81b2ed25e619a66",
+            "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J5",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df"
+            },
+            "vehicle_before_frontier": true
+          },
+          "capability_digest": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J6",
+          "profile": "Gateway adapter",
+          "run": "67d8dfed2800",
+          "generation": 2,
+          "mode": "COMMITTED",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 7,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": {
+            "run": "67d8dfed2800",
+            "controller": "J6",
+            "generation": 2,
+            "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "frontier": "J1",
+            "entry": "RED_CLEAR",
+            "commands": [
+              "GREEN",
+              "RED"
+            ],
+            "native_commands": [
+              {
+                "operation": "gateway_permission",
+                "allow_movement": true
+              },
+              {
+                "operation": "gateway_permission",
+                "allow_movement": false
+              }
+            ]
+          },
+          "committed_capsule": "6fcc8dc1498d9ba42a2f3bc736b40a3b16da362fd2674c6a9b3a63160ad515ef",
+          "last_reason": "Verified locally; waiting for corridor release",
+          "committed_state": {
+            "run": "67d8dfed2800",
+            "controller": "J6",
+            "generation": 2,
+            "capsule": "6fcc8dc1498d9ba42a2f3bc736b40a3b16da362fd2674c6a9b3a63160ad515ef",
+            "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J6",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5"
+            },
+            "vehicle_before_frontier": true
+          },
+          "capability_digest": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+          "evidence_age": 0,
+          "ready": true
+        }
+      ],
+      "vehicles": [
+        {
+          "id": "ambulance",
+          "x": -41.07058677660501,
+          "y": -1.6,
+          "angle": 0
+        },
+        {
+          "id": "car-0",
+          "x": 186.25141015736443,
+          "y": 81.6,
+          "angle": -3.141592653589793
+        },
+        {
+          "id": "car-1",
+          "x": 213.0919896496486,
+          "y": 81.6,
+          "angle": -3.141592653589793
+        },
+        {
+          "id": "car-2",
+          "x": 230.95432873398684,
+          "y": 81.6,
+          "angle": -3.141592653589793
+        }
+      ],
+      "ambulance_speed": 0,
+      "metrics": {
+        "reconfigured": 5,
+        "recovery_seconds": null,
+        "stale_rejected": 0,
+        "unsafe_acceptances": 0,
+        "fallbacks": 0,
+        "prefix_mutations": 0
+      },
+      "certificates": [
+        {
+          "body": {
+            "run": "67d8dfed2800",
+            "controller": "J2",
+            "generation": 2,
+            "capsule": "6d5d4763a972de6f6b97c58d06712fda85ee1a12193ceeb077d05108c7b7ae3f",
+            "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J2",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e"
+            },
+            "vehicle_before_frontier": true
+          },
+          "signature": "UD5fBlaM0HK+uHtGthoeFOW4n95Rp+PhVsAxru0jocDpBV2W/UyBSX4SJYqbsizhpwsCB8BBFWhbT9Lc4yvdCw=="
+        },
+        {
+          "body": {
+            "run": "67d8dfed2800",
+            "controller": "J5",
+            "generation": 2,
+            "capsule": "dffd89ae03e141b7bb6e7f97c0be64e0b668496c360ec13ed81b2ed25e619a66",
+            "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J5",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df"
+            },
+            "vehicle_before_frontier": true
+          },
+          "signature": "2rjeEfCrtR/WRFyDeLvqqvNGmXj7bdQ+feh2I5HHUeoMAOfKq5dsWXU0pvMM/w3LcFA2MCs6Tod+wbLctno1AA=="
+        },
+        {
+          "body": {
+            "run": "67d8dfed2800",
+            "controller": "J6",
+            "generation": 2,
+            "capsule": "6fcc8dc1498d9ba42a2f3bc736b40a3b16da362fd2674c6a9b3a63160ad515ef",
+            "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J6",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5"
+            },
+            "vehicle_before_frontier": true
+          },
+          "signature": "+a+BVR6BLCBU7A87NM3kRGRJvHdwFwlasZ9YgUeBBFp8ZLIsuyWz7v1GKmIXre5+mJyCztWYZJn+G0m0XGVuDA=="
+        }
+      ],
+      "faults": [
+        {
+          "at": 4.8,
+          "controller": "J3",
+          "kind": "readback"
+        }
+      ],
+      "collisions": 0,
+      "obligations": [
+        {
+          "id": "movement-J1",
+          "controller": "J1",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J2",
+          "controller": "J2",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J3",
+          "controller": "J3",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J6",
+          "controller": "J6",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        }
+      ],
+      "agent_mode": "process"
+    },
+    {
+      "id": "67d8dfed2800",
+      "time": 8,
+      "status": "RECOVERING",
+      "running": true,
+      "mode": "SUMO microsimulation",
+      "seed": 42,
+      "density": 12,
+      "strategy": "partial",
+      "nodes": {
+        "W": [
+          -80,
+          0
+        ],
+        "J1": [
+          0,
+          0
+        ],
+        "J2": [
+          80,
+          0
+        ],
+        "J3": [
+          160,
+          0
+        ],
+        "J4": [
+          0,
+          80
+        ],
+        "J5": [
+          80,
+          80
+        ],
+        "J6": [
+          160,
+          80
+        ],
+        "E": [
+          240,
+          80
+        ]
+      },
+      "pairs": [
+        [
+          "W",
+          "J1"
+        ],
+        [
+          "J1",
+          "J2"
+        ],
+        [
+          "J2",
+          "J3"
+        ],
+        [
+          "J1",
+          "J4"
+        ],
+        [
+          "J2",
+          "J5"
+        ],
+        [
+          "J3",
+          "J6"
+        ],
+        [
+          "J4",
+          "J5"
+        ],
+        [
+          "J5",
+          "J6"
+        ],
+        [
+          "J6",
+          "E"
+        ]
+      ],
+      "route": [
+        "W",
+        "J1",
+        "J2",
+        "J3",
+        "J6",
+        "E"
+      ],
+      "prefix": [
+        "W"
+      ],
+      "failed": "J3",
+      "recovery": {
+        "generation": 2,
+        "frontier": "J1",
+        "old": [
+          "W",
+          "J1",
+          "J2",
+          "J3",
+          "J6",
+          "E"
+        ],
+        "successor": [
+          "W",
+          "J1",
+          "J2",
+          "J5",
+          "J6",
+          "E"
+        ],
+        "candidates": [
+          "J1",
+          "J2",
+          "J5",
+          "J6"
+        ],
+        "scope": [
+          "J1",
+          "J2",
+          "J3",
+          "J5",
+          "J6"
+        ],
+        "started": 4.8,
+        "stage": "CLEARANCE",
+        "kind": "readback"
+      },
+      "controllers": [
+        {
+          "id": "J1",
+          "profile": "Full readback",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "PREPARED",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 8,
+          "sequence": 22,
+          "rejected": 1,
+          "prepared": {
+            "run": "67d8dfed2800",
+            "controller": "J1",
+            "generation": 2,
+            "capability": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "frontier": "J1",
+            "entry": "RED_CLEAR",
+            "commands": [
+              "GREEN",
+              "RED"
+            ],
+            "native_commands": [
+              {
+                "operation": "phase_hold",
+                "state": "GREEN"
+              },
+              {
+                "operation": "phase_hold",
+                "state": "RED"
+              }
+            ]
+          },
+          "committed_capsule": null,
+          "last_reason": "State predicates satisfied",
+          "committed_state": null,
+          "capability_digest": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J2",
+          "profile": "Limited adapter",
+          "run": "67d8dfed2800",
+          "generation": 2,
+          "mode": "COMMITTED",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 8,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": {
+            "run": "67d8dfed2800",
+            "controller": "J2",
+            "generation": 2,
+            "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "frontier": "J1",
+            "entry": "RED_CLEAR",
+            "commands": [
+              "GREEN",
+              "RED"
+            ],
+            "native_commands": [
+              {
+                "operation": "select_program",
+                "program": "priority"
+              },
+              {
+                "operation": "select_program",
+                "program": "clearance"
+              }
+            ]
+          },
+          "committed_capsule": "6d5d4763a972de6f6b97c58d06712fda85ee1a12193ceeb077d05108c7b7ae3f",
+          "last_reason": "Verified locally; waiting for corridor release",
+          "committed_state": {
+            "run": "67d8dfed2800",
+            "controller": "J2",
+            "generation": 2,
+            "capsule": "6d5d4763a972de6f6b97c58d06712fda85ee1a12193ceeb077d05108c7b7ae3f",
+            "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J2",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e"
+            },
+            "vehicle_before_frontier": true
+          },
+          "capability_digest": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J3",
+          "profile": "Gateway adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "FROZEN",
+          "config": 1,
+          "readback": false,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 4.8,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Old actuation authority revoked locally",
+          "committed_state": null,
+          "capability_digest": "3459533b704076c9d4b5c4cf5c1774f9d19f690470949339a4bdbb8cf448ba7a",
+          "evidence_age": 3.2,
+          "ready": false
+        },
+        {
+          "id": "J4",
+          "profile": "Full readback",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 8,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "c76184c8e746643be72cb9879afcca50152175c4a17e2740cbe2af6c918519cb",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J5",
+          "profile": "Limited adapter",
+          "run": "67d8dfed2800",
+          "generation": 2,
+          "mode": "COMMITTED",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 8,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": {
+            "run": "67d8dfed2800",
+            "controller": "J5",
+            "generation": 2,
+            "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "frontier": "J1",
+            "entry": "RED_CLEAR",
+            "commands": [
+              "GREEN",
+              "RED"
+            ],
+            "native_commands": [
+              {
+                "operation": "select_program",
+                "program": "priority"
+              },
+              {
+                "operation": "select_program",
+                "program": "clearance"
+              }
+            ]
+          },
+          "committed_capsule": "dffd89ae03e141b7bb6e7f97c0be64e0b668496c360ec13ed81b2ed25e619a66",
+          "last_reason": "Verified locally; waiting for corridor release",
+          "committed_state": {
+            "run": "67d8dfed2800",
+            "controller": "J5",
+            "generation": 2,
+            "capsule": "dffd89ae03e141b7bb6e7f97c0be64e0b668496c360ec13ed81b2ed25e619a66",
+            "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J5",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df"
+            },
+            "vehicle_before_frontier": true
+          },
+          "capability_digest": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J6",
+          "profile": "Gateway adapter",
+          "run": "67d8dfed2800",
+          "generation": 2,
+          "mode": "COMMITTED",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 8,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": {
+            "run": "67d8dfed2800",
+            "controller": "J6",
+            "generation": 2,
+            "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "frontier": "J1",
+            "entry": "RED_CLEAR",
+            "commands": [
+              "GREEN",
+              "RED"
+            ],
+            "native_commands": [
+              {
+                "operation": "gateway_permission",
+                "allow_movement": true
+              },
+              {
+                "operation": "gateway_permission",
+                "allow_movement": false
+              }
+            ]
+          },
+          "committed_capsule": "6fcc8dc1498d9ba42a2f3bc736b40a3b16da362fd2674c6a9b3a63160ad515ef",
+          "last_reason": "Verified locally; waiting for corridor release",
+          "committed_state": {
+            "run": "67d8dfed2800",
+            "controller": "J6",
+            "generation": 2,
+            "capsule": "6fcc8dc1498d9ba42a2f3bc736b40a3b16da362fd2674c6a9b3a63160ad515ef",
+            "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J6",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5"
+            },
+            "vehicle_before_frontier": true
+          },
+          "capability_digest": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+          "evidence_age": 0,
+          "ready": true
+        }
+      ],
+      "vehicles": [
+        {
+          "id": "ambulance",
+          "x": -41.07058677660501,
+          "y": -1.6,
+          "angle": 0
+        },
+        {
+          "id": "car-0",
+          "x": 175.90874816451998,
+          "y": 81.6,
+          "angle": -3.141592653589793
+        },
+        {
+          "id": "car-1",
+          "x": 202.70321767279876,
+          "y": 81.6,
+          "angle": -3.141592653589793
+        },
+        {
+          "id": "car-2",
+          "x": 225.75545465152624,
+          "y": 81.6,
+          "angle": -3.141592653589793
+        },
+        {
+          "id": "car-3",
+          "x": 234.806314237063,
+          "y": 81.6,
+          "angle": -3.141592653589793
+        }
+      ],
+      "ambulance_speed": 0,
+      "metrics": {
+        "reconfigured": 5,
+        "recovery_seconds": null,
+        "stale_rejected": 0,
+        "unsafe_acceptances": 0,
+        "fallbacks": 0,
+        "prefix_mutations": 0
+      },
+      "certificates": [
+        {
+          "body": {
+            "run": "67d8dfed2800",
+            "controller": "J2",
+            "generation": 2,
+            "capsule": "6d5d4763a972de6f6b97c58d06712fda85ee1a12193ceeb077d05108c7b7ae3f",
+            "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J2",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e"
+            },
+            "vehicle_before_frontier": true
+          },
+          "signature": "UD5fBlaM0HK+uHtGthoeFOW4n95Rp+PhVsAxru0jocDpBV2W/UyBSX4SJYqbsizhpwsCB8BBFWhbT9Lc4yvdCw=="
+        },
+        {
+          "body": {
+            "run": "67d8dfed2800",
+            "controller": "J5",
+            "generation": 2,
+            "capsule": "dffd89ae03e141b7bb6e7f97c0be64e0b668496c360ec13ed81b2ed25e619a66",
+            "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J5",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df"
+            },
+            "vehicle_before_frontier": true
+          },
+          "signature": "2rjeEfCrtR/WRFyDeLvqqvNGmXj7bdQ+feh2I5HHUeoMAOfKq5dsWXU0pvMM/w3LcFA2MCs6Tod+wbLctno1AA=="
+        },
+        {
+          "body": {
+            "run": "67d8dfed2800",
+            "controller": "J6",
+            "generation": 2,
+            "capsule": "6fcc8dc1498d9ba42a2f3bc736b40a3b16da362fd2674c6a9b3a63160ad515ef",
+            "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J6",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5"
+            },
+            "vehicle_before_frontier": true
+          },
+          "signature": "+a+BVR6BLCBU7A87NM3kRGRJvHdwFwlasZ9YgUeBBFp8ZLIsuyWz7v1GKmIXre5+mJyCztWYZJn+G0m0XGVuDA=="
+        }
+      ],
+      "faults": [
+        {
+          "at": 4.8,
+          "controller": "J3",
+          "kind": "readback"
+        }
+      ],
+      "collisions": 0,
+      "obligations": [
+        {
+          "id": "movement-J1",
+          "controller": "J1",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J2",
+          "controller": "J2",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J3",
+          "controller": "J3",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J6",
+          "controller": "J6",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        }
+      ],
+      "agent_mode": "process"
+    },
+    {
+      "id": "67d8dfed2800",
+      "time": 9,
+      "status": "ACTIVE",
+      "running": true,
+      "mode": "SUMO microsimulation",
+      "seed": 42,
+      "density": 12,
+      "strategy": "partial",
+      "nodes": {
+        "W": [
+          -80,
+          0
+        ],
+        "J1": [
+          0,
+          0
+        ],
+        "J2": [
+          80,
+          0
+        ],
+        "J3": [
+          160,
+          0
+        ],
+        "J4": [
+          0,
+          80
+        ],
+        "J5": [
+          80,
+          80
+        ],
+        "J6": [
+          160,
+          80
+        ],
+        "E": [
+          240,
+          80
+        ]
+      },
+      "pairs": [
+        [
+          "W",
+          "J1"
+        ],
+        [
+          "J1",
+          "J2"
+        ],
+        [
+          "J2",
+          "J3"
+        ],
+        [
+          "J1",
+          "J4"
+        ],
+        [
+          "J2",
+          "J5"
+        ],
+        [
+          "J3",
+          "J6"
+        ],
+        [
+          "J4",
+          "J5"
+        ],
+        [
+          "J5",
+          "J6"
+        ],
+        [
+          "J6",
+          "E"
+        ]
+      ],
+      "route": [
+        "W",
+        "J1",
+        "J2",
+        "J5",
+        "J6",
+        "E"
+      ],
+      "prefix": [
+        "W"
+      ],
+      "failed": "J3",
+      "recovery": {
+        "generation": 2,
+        "frontier": "J1",
+        "old": [
+          "W",
+          "J1",
+          "J2",
+          "J3",
+          "J6",
+          "E"
+        ],
+        "successor": [
+          "W",
+          "J1",
+          "J2",
+          "J5",
+          "J6",
+          "E"
+        ],
+        "candidates": [
+          "J1",
+          "J2",
+          "J5",
+          "J6"
+        ],
+        "scope": [
+          "J1",
+          "J2",
+          "J3",
+          "J5",
+          "J6"
+        ],
+        "started": 4.8,
+        "stage": "COMMITTED",
+        "kind": "readback"
+      },
+      "controllers": [
+        {
+          "id": "J1",
+          "profile": "Full readback",
+          "run": "67d8dfed2800",
+          "generation": 2,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "GREEN",
+          "observed_phase": "GREEN",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 9,
+          "sequence": 4,
+          "rejected": 1,
+          "prepared": {
+            "run": "67d8dfed2800",
+            "controller": "J1",
+            "generation": 2,
+            "capability": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "frontier": "J1",
+            "entry": "RED_CLEAR",
+            "commands": [
+              "GREEN",
+              "RED"
+            ],
+            "native_commands": [
+              {
+                "operation": "phase_hold",
+                "state": "GREEN"
+              },
+              {
+                "operation": "phase_hold",
+                "state": "RED"
+              }
+            ]
+          },
+          "committed_capsule": "8eb24d269bb1008cdd1484987f31f4c52387dbc38b915e47661d03a017769d5c",
+          "last_reason": "Command accepted",
+          "committed_state": {
+            "run": "67d8dfed2800",
+            "controller": "J1",
+            "generation": 2,
+            "capsule": "8eb24d269bb1008cdd1484987f31f4c52387dbc38b915e47661d03a017769d5c",
+            "capability": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 8.2,
+            "expires": 9.2,
+            "evidence": {
+              "controller": "J1",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 8.2,
+              "capability": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21"
+            },
+            "vehicle_before_frontier": true
+          },
+          "capability_digest": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21",
+          "evidence_age": 0,
+          "ready": false
+        },
+        {
+          "id": "J2",
+          "profile": "Limited adapter",
+          "run": "67d8dfed2800",
+          "generation": 2,
+          "mode": "COMMITTED",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 9,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": {
+            "run": "67d8dfed2800",
+            "controller": "J2",
+            "generation": 2,
+            "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "frontier": "J1",
+            "entry": "RED_CLEAR",
+            "commands": [
+              "GREEN",
+              "RED"
+            ],
+            "native_commands": [
+              {
+                "operation": "select_program",
+                "program": "priority"
+              },
+              {
+                "operation": "select_program",
+                "program": "clearance"
+              }
+            ]
+          },
+          "committed_capsule": "6d5d4763a972de6f6b97c58d06712fda85ee1a12193ceeb077d05108c7b7ae3f",
+          "last_reason": "Verified locally; waiting for corridor release",
+          "committed_state": {
+            "run": "67d8dfed2800",
+            "controller": "J2",
+            "generation": 2,
+            "capsule": "6d5d4763a972de6f6b97c58d06712fda85ee1a12193ceeb077d05108c7b7ae3f",
+            "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J2",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e"
+            },
+            "vehicle_before_frontier": true
+          },
+          "capability_digest": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J3",
+          "profile": "Gateway adapter",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "FROZEN",
+          "config": 1,
+          "readback": false,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 4.8,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Old actuation authority revoked locally",
+          "committed_state": null,
+          "capability_digest": "3459533b704076c9d4b5c4cf5c1774f9d19f690470949339a4bdbb8cf448ba7a",
+          "evidence_age": 4.2,
+          "ready": false
+        },
+        {
+          "id": "J4",
+          "profile": "Full readback",
+          "run": "67d8dfed2800",
+          "generation": 1,
+          "mode": "ACTIVE",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 9,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": null,
+          "committed_capsule": null,
+          "last_reason": "Ready",
+          "committed_state": null,
+          "capability_digest": "c76184c8e746643be72cb9879afcca50152175c4a17e2740cbe2af6c918519cb",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J5",
+          "profile": "Limited adapter",
+          "run": "67d8dfed2800",
+          "generation": 2,
+          "mode": "COMMITTED",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 9,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": {
+            "run": "67d8dfed2800",
+            "controller": "J5",
+            "generation": 2,
+            "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "frontier": "J1",
+            "entry": "RED_CLEAR",
+            "commands": [
+              "GREEN",
+              "RED"
+            ],
+            "native_commands": [
+              {
+                "operation": "select_program",
+                "program": "priority"
+              },
+              {
+                "operation": "select_program",
+                "program": "clearance"
+              }
+            ]
+          },
+          "committed_capsule": "dffd89ae03e141b7bb6e7f97c0be64e0b668496c360ec13ed81b2ed25e619a66",
+          "last_reason": "Verified locally; waiting for corridor release",
+          "committed_state": {
+            "run": "67d8dfed2800",
+            "controller": "J5",
+            "generation": 2,
+            "capsule": "dffd89ae03e141b7bb6e7f97c0be64e0b668496c360ec13ed81b2ed25e619a66",
+            "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J5",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df"
+            },
+            "vehicle_before_frontier": true
+          },
+          "capability_digest": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+          "evidence_age": 0,
+          "ready": true
+        },
+        {
+          "id": "J6",
+          "profile": "Gateway adapter",
+          "run": "67d8dfed2800",
+          "generation": 2,
+          "mode": "COMMITTED",
+          "config": 1,
+          "readback": true,
+          "writable": true,
+          "online": true,
+          "phase": "RED",
+          "observed_phase": "RED",
+          "pedestrian_until": 0,
+          "occupied": false,
+          "observed_at": 9,
+          "sequence": -1,
+          "rejected": 0,
+          "prepared": {
+            "run": "67d8dfed2800",
+            "controller": "J6",
+            "generation": 2,
+            "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "frontier": "J1",
+            "entry": "RED_CLEAR",
+            "commands": [
+              "GREEN",
+              "RED"
+            ],
+            "native_commands": [
+              {
+                "operation": "gateway_permission",
+                "allow_movement": true
+              },
+              {
+                "operation": "gateway_permission",
+                "allow_movement": false
+              }
+            ]
+          },
+          "committed_capsule": "6fcc8dc1498d9ba42a2f3bc736b40a3b16da362fd2674c6a9b3a63160ad515ef",
+          "last_reason": "Verified locally; waiting for corridor release",
+          "committed_state": {
+            "run": "67d8dfed2800",
+            "controller": "J6",
+            "generation": 2,
+            "capsule": "6fcc8dc1498d9ba42a2f3bc736b40a3b16da362fd2674c6a9b3a63160ad515ef",
+            "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J6",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5"
+            },
+            "vehicle_before_frontier": true
+          },
+          "capability_digest": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+          "evidence_age": 0,
+          "ready": true
+        }
+      ],
+      "vehicles": [
+        {
+          "id": "ambulance",
+          "x": -39.5932565219809,
+          "y": -1.6,
+          "angle": 0
+        },
+        {
+          "id": "car-0",
+          "x": 169.86058048893585,
+          "y": 81.6,
+          "angle": -3.141592653589793
+        },
+        {
+          "id": "car-1",
+          "x": 192.18850950148362,
+          "y": 81.6,
+          "angle": -3.141592653589793
+        },
+        {
+          "id": "car-2",
+          "x": 218.47473217225306,
+          "y": 81.6,
+          "angle": -3.141592653589793
+        },
+        {
+          "id": "car-3",
+          "x": 233.0909743977521,
+          "y": 81.6,
+          "angle": -3.141592653589793
+        }
+      ],
+      "ambulance_speed": 8.6,
+      "metrics": {
+        "reconfigured": 5,
+        "recovery_seconds": 3.4,
+        "stale_rejected": 0,
+        "unsafe_acceptances": 0,
+        "fallbacks": 0,
+        "prefix_mutations": 0
+      },
+      "certificates": [
+        {
+          "body": {
+            "run": "67d8dfed2800",
+            "controller": "J2",
+            "generation": 2,
+            "capsule": "6d5d4763a972de6f6b97c58d06712fda85ee1a12193ceeb077d05108c7b7ae3f",
+            "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J2",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "acbd622fe82b71d0f04506599796a1f59232089d0ad673d179cb1aae45d1097e"
+            },
+            "vehicle_before_frontier": true
+          },
+          "signature": "UD5fBlaM0HK+uHtGthoeFOW4n95Rp+PhVsAxru0jocDpBV2W/UyBSX4SJYqbsizhpwsCB8BBFWhbT9Lc4yvdCw=="
+        },
+        {
+          "body": {
+            "run": "67d8dfed2800",
+            "controller": "J5",
+            "generation": 2,
+            "capsule": "dffd89ae03e141b7bb6e7f97c0be64e0b668496c360ec13ed81b2ed25e619a66",
+            "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J5",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "2a7d3c279d98473b3d564db1e67b3bd0ba05a7aa115ef37a933790210269b5df"
+            },
+            "vehicle_before_frontier": true
+          },
+          "signature": "2rjeEfCrtR/WRFyDeLvqqvNGmXj7bdQ+feh2I5HHUeoMAOfKq5dsWXU0pvMM/w3LcFA2MCs6Tod+wbLctno1AA=="
+        },
+        {
+          "body": {
+            "run": "67d8dfed2800",
+            "controller": "J6",
+            "generation": 2,
+            "capsule": "6fcc8dc1498d9ba42a2f3bc736b40a3b16da362fd2674c6a9b3a63160ad515ef",
+            "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 5.8,
+            "expires": 6.8,
+            "evidence": {
+              "controller": "J6",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 5.8,
+              "capability": "03506d6f9e4277704073f68965a3228ada693700acb98a69b3a139cd1895ddb5"
+            },
+            "vehicle_before_frontier": true
+          },
+          "signature": "+a+BVR6BLCBU7A87NM3kRGRJvHdwFwlasZ9YgUeBBFp8ZLIsuyWz7v1GKmIXre5+mJyCztWYZJn+G0m0XGVuDA=="
+        },
+        {
+          "body": {
+            "run": "67d8dfed2800",
+            "controller": "J1",
+            "generation": 2,
+            "capsule": "8eb24d269bb1008cdd1484987f31f4c52387dbc38b915e47661d03a017769d5c",
+            "capability": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21",
+            "frontier": "J1",
+            "suffix": [
+              "W",
+              "J1",
+              "J2",
+              "J5",
+              "J6",
+              "E"
+            ],
+            "issued": 8.2,
+            "expires": 9.2,
+            "evidence": {
+              "controller": "J1",
+              "phase": "RED",
+              "occupied": false,
+              "pedestrian_clear": true,
+              "observed_at": 8.2,
+              "capability": "4657f1da72cf10defcf02e7be01ef53a73ff5d6312635ec1269e83be0024cc21"
+            },
+            "vehicle_before_frontier": true
+          },
+          "signature": "ZzdVwjjGwtrAGv81aV9Zj43oVXS+DZQAAjxMXAoveHgwpBFyetaFpcmrswYMKY3wF96tZKmVa+M5lx72DGFmBQ=="
+        }
+      ],
+      "faults": [
+        {
+          "at": 4.8,
+          "controller": "J3",
+          "kind": "readback"
+        }
+      ],
+      "collisions": 0,
+      "obligations": [
+        {
+          "id": "movement-J1",
+          "controller": "J1",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J2",
+          "controller": "J2",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J3",
+          "controller": "J3",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        },
+        {
+          "id": "movement-J6",
+          "controller": "J6",
+          "requires": [
+            "readback",
+            "write",
+            "configuration",
+            "clearance"
+          ],
+          "completed": false
+        }
+      ],
+      "agent_mode": "process"
+    }
+  ],
+  "assumptions": [
+    "Simulated physical evidence; no roadside validation",
+    "Single emergency vehicle; corridor release waits for all successor commitments",
+    "Pedestrian clearance fault is modelled as an explicit timer, not SUMO pedestrian demand",
+    "Authority key is ephemeral per experiment; signed records remain inspectable but replay uses stored states"
+  ],
+  "wall_elapsed_seconds": 27.695516314999963
+}

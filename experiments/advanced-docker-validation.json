@@ -1,0 +1,59 @@
+{
+  "checks": [
+    "Nginx \u00e2\u2020\u2019 Spring gateway \u00e2\u2020\u2019 research API, eight controller processes",
+    "Repeated SUMO experiment: both strategies arrive, multiple transfers, zero observed collisions or stale acceptances",
+    "Approaching-J3 accident demo staged, ready to start",
+    "PostgreSQL run and scenario persistence",
+    "Deployed frontend and WebSocket telemetry"
+  ],
+  "pageErrors": [],
+  "experiment": {
+    "id": "fe91b8b41da3",
+    "status": "COMPLETE",
+    "cancel": false,
+    "progress": 1,
+    "results": [
+      {
+        "seed": 0,
+        "strategy": "whole",
+        "scenario": "repeated",
+        "mode": "SUMO microsimulation",
+        "elapsed": 65,
+        "status": "COMPLETE",
+        "collisions": 0,
+        "reconfigured": 8,
+        "recovery_seconds": 3.4,
+        "stale_rejected": 1,
+        "unsafe_acceptances": 0,
+        "fallbacks": 0,
+        "prefix_mutations": 0,
+        "recovery_count": 2,
+        "reconfigured_total": 16,
+        "total_recovery_seconds": 6.8
+      },
+      {
+        "seed": 0,
+        "strategy": "partial",
+        "scenario": "repeated",
+        "mode": "SUMO microsimulation",
+        "elapsed": 65,
+        "status": "COMPLETE",
+        "collisions": 0,
+        "reconfigured": 6,
+        "recovery_seconds": 3.4,
+        "stale_rejected": 1,
+        "unsafe_acceptances": 0,
+        "fallbacks": 0,
+        "prefix_mutations": 0,
+        "recovery_count": 2,
+        "reconfigured_total": 11,
+        "total_recovery_seconds": 6.8
+      }
+    ],
+    "mode": "sumo",
+    "density": 0,
+    "scenario": "repeated"
+  },
+  "preset": "904d85e89713",
+  "passed": true
+}

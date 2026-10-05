@@ -51,7 +51,7 @@ const report={checks:[],pageErrors:[]};
   await page.getByRole('button',{name:'Save preset',exact:true}).click();
   await page.getByText('Scenario saved',{exact:true}).waitFor();
   report.checks.push('Incident schedule saved in scenario preset');
-  await page.getByRole('button',{name:'Live corridor',exact:true}).click();
+  await page.getByRole('button',{name:'Command Centre',exact:true}).click();
   await page.screenshot({path:path.join(root,'.qa','advanced-dashboard.png'),fullPage:true});
   await page.setViewportSize({width:390,height:844});await wait(800);
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
